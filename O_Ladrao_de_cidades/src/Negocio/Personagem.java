@@ -57,7 +57,8 @@ public class Personagem {
 	
 	
 }
-
+//criar referecnia
+//hashmap
 
 
 

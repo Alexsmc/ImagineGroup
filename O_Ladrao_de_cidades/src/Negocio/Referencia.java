@@ -2,7 +2,7 @@ package Negocio;
 
 import java.util.HashMap;
 
-public class Referencia {
+public class Referencia extends Aventura{
 	private int numero;
 	private String texto;
 	private HashMap<Character, Referencia> direcoes;

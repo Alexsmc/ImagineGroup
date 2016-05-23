@@ -55,6 +55,11 @@ public class Personagem {
 		
 	}
 	
-	
+	@Override
+	public String toString();{
+		return "Nome: " + nome +"\n";
+				+ "Habilidade: " + habilidade;  
+				+ "" +;
+	}
 	
 }

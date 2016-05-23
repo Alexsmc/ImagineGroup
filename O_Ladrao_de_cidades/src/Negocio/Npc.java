@@ -4,7 +4,7 @@ public class Npc {
 	private int MonstroHab;
 	private int MonstroEner;
 	private String NomeMonstro;
-	
+		
 	public String getNomeMonstro() {
 		return NomeMonstro;
 	}

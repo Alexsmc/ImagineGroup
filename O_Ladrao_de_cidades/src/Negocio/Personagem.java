@@ -8,6 +8,7 @@ public class Personagem {
 	private int sorte; // O quanto de sorte ele tem;
 	private int ouro; // o quanto de ouro lhe possui;
 	
+	
 	public String getNome() {
 		return nome;
 	}
@@ -39,7 +40,7 @@ public class Personagem {
 		this.ouro = ouro; // o ouro é conquistado durante a ventura;
 	}
 	
-	public boolean UsarSorte(int sorte){
+	public boolean usarSorte(int sorte){
 		boolean resultado = false;
 		Random d = new Random();
 		int dado = d.nextInt(12)+2;
@@ -57,34 +58,3 @@ public class Personagem {
 	
 	
 }
-//criar referecnia
-//hashmap
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

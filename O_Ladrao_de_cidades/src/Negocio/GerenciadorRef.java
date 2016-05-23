@@ -212,9 +212,9 @@ public class GerenciadorRef {
 			
 			r005.isBattle(heroi, monstro005);
 			if(r005.isBattle(heroi, monstro005)==true){
-				System.out.println(r371.toString());
+				//System.out.println(r371.toString());
 			}else{
-				System.out.println(r401.toString);
+				//System.out.println(r401.toString);
 			}
 			
 			Referencia r006 = new Referencia();

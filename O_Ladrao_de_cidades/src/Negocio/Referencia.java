@@ -3,7 +3,7 @@
  import java.util.Random;
 import java.util.Scanner;
  
-public class Referencia extends Aventura{
+public class Referencia{
 	private String text;
 	private int numero;
 	private boolean battle;
@@ -145,7 +145,8 @@ public class Referencia extends Aventura{
 	public boolean isItenfound() {
 		return itenfound;
 	}
-	public String toString(String text, String decisao1, String decisao2, String decisao3){
+	@Override
+	public String toString(){
 		String narrativa = text + decisao1 + decisao2 + decisao3;
 		return narrativa;
 	}

@@ -213,8 +213,15 @@ public class GerenciadorRef {
 			r005.isBattle(heroi, monstro005);
 			if(r005.isBattle(heroi, monstro005)==true){
 				System.out.println(r371.toString());
+			}else{
+				System.out.println(r401.toString);
 			}
 			
+			Referencia r006 = new Referencia();
+			refList.add(r006);
+			r005.setNumero(6);
+			r006.setText("Seu tom de voz se torna desagradável, e ela diz para você sair da casa dela, "
+					+ "porque certamente não há trapos lá, nem, falando nisso, qualquer outro tipo de rebotalho.");
 			
 		}
 	}

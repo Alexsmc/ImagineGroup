@@ -42,16 +42,17 @@ public class Aventura {
 		System.out.println("Essa é a sua ficha, tenha uma ótima aventura, ha ha ha ha....");
 		System.out.println(heroi);
 		//heroi.usarSorte(heroi.getSorteAtual());
-		System.out.println(heroi.getSorteAtual());
+		/*System.out.println(heroi.getSorteAtual());
 		Referencia teste = new Referencia();
 		Npc nono = new Npc();
 		nono.setNomeMonstro("Gigante");
 		nono.setMonstroEner(10);
 		nono.setMonstroHab(6);
-		teste.isBattle(heroi, nono);
-		System.out.println("Sorte atual: " + heroi.getSorteAtual());
-		//GerenciadorRef mundo = new GerenciadorRef();
-		//mundo.loadRef(heroi);
+		System.out.println(nono.toString());
+		teste.isBattle(heroi, nono);*/
+		//System.out.println("Sorte atual: " + heroi.getSorteAtual());
+		GerenciadorRef mundo = new GerenciadorRef();
+		mundo.loadRef(heroi);
 		
 	
 	}

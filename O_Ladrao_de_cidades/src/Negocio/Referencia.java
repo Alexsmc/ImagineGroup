@@ -6,64 +6,32 @@ import java.util.Scanner;
  
 public class Referencia{
 	private String text;
+	private Npc monstro;
 	private int numero;
 	private boolean battle;
 	private boolean shop;
 	private boolean itenfound;
-	private String decisao1, decisao2, decisao3, decisao4;
 	private Scanner r;
 	//private int opcao;
 	
-	
-	public String getDecisao1() {
-		return decisao1;
-	}
-
-
-	public void setDecisao1(String decisao1) {
-		this.decisao1 = decisao1;
-	}
-
-
-	public String getDecisao2() {
-		return decisao2;
-	}
-
-
-	public void setDecisao2(String decisao2) {
-		this.decisao2 = decisao2;
-	}
-
-
-	public String getDecisao3() {
-		return decisao3;
-	}
-
-
-	public void setDecisao3(String decisao3) {
-		this.decisao3 = decisao3;
-	}
-
-
-	public String getDecisao4() {
-		return decisao4;
-	}
-
-
-	public void setDecisao4(String decisao4) {
-		this.decisao4 = decisao4;
-	}
-
-
 	public String getText() {
 		return text;
 	}
 
-
+	public void setMonstro(Npc monstro){
+		this.monstro = monstro;
+	}
 	public void setText(String text) {
 		this.text = text;
 	}
 
+	public Npc getMonstro() {
+		return monstro;
+	}
+
+	public void executar(){
+		
+	}
 
 	public int getNumero() {
 		return numero;
@@ -75,7 +43,7 @@ public class Referencia{
 	}
 
 
-	public boolean isBattle(Personagem heroi, Npc monstro) throws IOException {
+	public boolean isBattle(Personagem heroi){
 		battle = false;
 		do{
             		Random d = new Random();
@@ -163,12 +131,27 @@ public class Referencia{
 	}
 	@Override
 	public String toString(){
-		String narrativa = text + decisao1 + decisao2 + decisao3;
+		String narrativa = text;
 		return narrativa;
 	}
 
 	public void setItenfound(boolean itenfound) {
 		this.itenfound = itenfound;
 	}
-
+	public void oferecerProvisao(Mochila mochila, Personagem heroi){
+		System.out.println("Deseja usar provisões? (y/n)");
+		int quantidade=0;
+		char decisao = r.nextLine().charAt(0);
+		if(decisao == 'y'|| decisao == 'Y'){
+			do{
+			System.out.println("Quantas deseja usar? Possui(" + mochila.getProvisao() + ")");
+			quantidade = r.nextInt();
+			}while(quantidade<=mochila.getProvisao());
+			for(int x=0; x<quantidade;x++){
+				mochila.usarProvisao(heroi);
+				System.out.println("Você Recuperou 4 de energia!");
+			}
+			System.out.println("Energia Atual: " + heroi.getEnergiaAtual() + "/" + heroi.getEnergia());
+		}
+	}
 }

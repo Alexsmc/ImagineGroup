@@ -29,9 +29,9 @@ public class Npc {
 		MonstroEner = monstroEner;
 	}
 	
-	public void ToString(String nomeMonstro, int MonstroHab, int MonstroEner){
-		System.out.println(NomeMonstro);
-		System.out.println("Habilidade: " + MonstroHab);
-		System.out.println("Energia " + MonstroEner);
+	@Override
+	public String toString(){
+		String fichaMonstro = NomeMonstro + "\nHabilidade: " + MonstroHab + "\nEnergia " + MonstroEner;
+		return fichaMonstro;
 	}
 }

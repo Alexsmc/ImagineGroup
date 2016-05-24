@@ -7,7 +7,7 @@ public class Mochila {
 	private boolean espada;
 	private boolean brocheEscorpiao;
 	private boolean anelDeFogo;
-	
+	private int provisao;
 	
 	
 	public boolean isEscudo(Personagem heroi) {
@@ -57,6 +57,15 @@ public class Mochila {
 	public void setAnelDeFogo(boolean anelDeFogo) {
 		this.anelDeFogo = anelDeFogo;
 	}
-	
+	public int getProvisao() {
+		return provisao;
+	}
+	public void setProvisao(int provisao) {
+		this.provisao = provisao;
+	}
+	public void usarProvisao(Personagem heroi){
+		this.provisao--;
+		heroi.setEnergiaAtual(heroi.getEnergiaAtual()+4);
+	}
 	
 }

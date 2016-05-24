@@ -4,28 +4,38 @@ import java.util.*;
 
 
 
-public class GerenciadorRef {
+public class GerenciadorRef { 
 
-	private ArrayList <Referencia> refList = new ArrayList<Referencia>();
+	private Referencia[] refList = new Referencia[400];
 	private Scanner escolher;
+	private Personagem heroi;
+	private Mochila mochila;
+	private int escolha;
 	
 	private Referencia decisao(int escolha, int opc1, int opc2, int opc3){
 		
 		switch (escolha) {
 		case 1:
-			return refList.get(opc1);
+			return this.refList[opc1];
 		case 2:
-			return refList.get(opc2);
+			return this.refList[opc2];
 		default:
-			return refList.get(opc3);
+			return this.refList[opc3];
 		}
 	}
 	
-	public void loadRef(Personagem heroi){
+	private void loadRef(Personagem heroi, Mochila mochila){
+		this.creatRef();
+		this.heroi = heroi;
+		this.mochila = mochila;
+	}
+	public void creatRef(){
 			Referencia r000 = new Referencia();
-			refList.add(r000);
 			r000.setNumero(0);
-			r000.setText("Você é um aventureiro em um mundo de monstros e magia, vivendo da rapidez de seu raciocínio\n"
+			//System.out.println("Provisõe: "+ mochila.getProvisao());
+			//System.out.println("Você pode usar provisões a qualquer momento do jogo, exceto durante as batalhas\n"
+			//		+ "usar provisões recuper 4 de sua energia. \nPs. Você não pode ter mais que sua energia maxima.");
+			r000.setText("\nVocê é um aventureiro em um mundo de monstros e magia, vivendo da rapidez de seu raciocínio\n"
 					+ "	e habilidade com a espada. Você ganha seu ouro como um guerreiro de aluguel, geralmente\n"
 					+ "	empregado por nobres e barões ricos em missões perigosas ou difíceis demais para os próprios\n"
 					+ "homens deles. Matar monstros e animais assombrosos na busca de algum tesouro fabuloso é\n"
@@ -113,14 +123,11 @@ public class GerenciadorRef {
 					+ "fungadas e arranhadas nas janelas dos Cachorros da Lua que perambulam lá fora. Quando o dia nasce, você já está acordado e\n"
 					+ "vestido, determinado a chegar a Port Blacksand rapidamente para encontrar este homem, Nicodemus. \n"
 					+ "Ao sair da taverna, um gato preto passa correndo pelos seus pés e você quase tropeça; talvez um mau presságio!.");
-			Mochila mochila = new Mochila();
-			mochila.setEspada(true);
-			heroi.setOuro(heroi.getOuro()+30);
-			System.out.println(r000.toString());
+			this.refList[0] = r000;
 			
 						
 			Referencia r001 = new Referencia();
-			refList.add(r001);
+			this.refList[1] = r001;
 			r001.setNumero(1);
 			r001.setText("A caminhada para Port Blacksand o leva na direção do oeste por uns 80 quilômetros,\n"
 					+ "atravessando	planícies e subindo serras. Felizmente, não acontece nenhum encontro perigoso.\n Finalmente, você"
@@ -136,17 +143,12 @@ public class GerenciadorRef {
 					+ "cota de malha de aço e um elmo de ferro. Ele avança, barrando a sua passagem com a lança, e diz:\n"
 					+ "- Quem quer entrar em Port Blacksand sem ser convidado? Explique o quê está fazendo aqui ou volte pelo\n"
 					+ "caminho que veio. Você:\n"
-					+ "Dirá a ele que quer ser levado a Nicodemus?(digite 1)"
-					+ "Dirá a ele que quer vender alguns objetos roubados?(digite 2)"
+					+ "Dirá a ele que quer ser levado a Nicodemus?(digite 1)\n"
+					+ "Dirá a ele que quer vender alguns objetos roubados?(digite 2)\n"
 					+ "Atacará o guarda rapidamente com sua espada?(digite 3)");
-			System.out.println(r001.toString());
-			System.out.println("O que você fará?");
-			escolher = new Scanner(System.in);
-			int escolha = escolher.nextInt();
-			System.out.println(decisao(escolha, 202, 33, 49).toString());
 			
 			Referencia r002 = new Referencia();
-			refList.add(r002);
+			this.refList[2] = (r002);
 			r002.setNumero(2);
 			r002.setText("Você retira a pulseira do seu braço e a joga no monstro que se aproxima. Ela cai sobre a sua\n"
 					+ "carapaça, semelhante a uma armadura, e gruda nela como se estivesse colada. Você fica então\n"
@@ -158,29 +160,16 @@ public class GerenciadorRef {
 					+ "qual passa o esgoto.\n"
 					+ "Se quiser retirar a grade, (Digite 1)\n"
 					+ "Se preferir caminhar de volta para o buraco de entrada, (Digite 2)");
-			do{
-				System.out.println("O que você fará?");
-				escolha = escolher.nextInt();
-			}while((escolha>2)||(escolha<1));;
-			System.out.println(decisao(escolha, 377, 174, 0).toString());
-			
+						
 			Referencia r003 = new Referencia();
-			refList.add(r003);
+			this.refList[3] = (r003);
 			r003.setNumero(3);
 			r003.setText("O homem pára de jogar e diz que ele pode lhe trazer boa sorte. Pela soma de três Peças de Ouro,\n"
 					+ "ele cantará uma canção para você que lhe trará boa sorte.\n"
 					+ "Se quiser pagar o músico, (digite 1).\n"
 					+ "Se não acreditar nele, poderá seguir em frente para a próxima barraca (digite 2).");
-			do{
-				System.out.println("O que você fará?");
-				escolha = escolher.nextInt();
-				}while((escolha>2)||(escolha<1));
-			if(escolha == 1){
-			heroi.setOuro(heroi.getOuro()-3);
-			}
-			System.out.println(decisao(escolha, 37, 398, 0).toString());
-			
-			Referencia r004 = new Referencia();
+						
+			/Referencia r004 = new Referencia();
 			refList.add(r004);
 			r004.setNumero(4);
 			r004.setText("Você ouve uma campainha tocar do outro lado da porta e, poucos minutos depois, ela é aberta por\n"
@@ -211,9 +200,9 @@ public class GerenciadorRef {
 			
 			r005.isBattle(heroi, monstro005);
 			if(r005.isBattle(heroi, monstro005)==true){
-				//System.out.println(r371.toString());
+				System.out.println(r371.toString());
 			}else{
-				//System.out.println(r401.toString);
+				System.out.println(r401.toString);
 			}
 			
 			Referencia r006 = new Referencia();
@@ -425,22 +414,41 @@ public class GerenciadorRef {
 			Referencia r018 = new Referencia();
 			refList.add(r018);
 			r018.setNumero(18);
-			r018.setText("Você mira cuidadosamente e lança a faca no vagabundo da frente. Jogue dois dados. "
-					+ "Se o total for igual ou menor do que o índice de HABILIDADE que você tem, a faca penetra profundamente no "
-					+ "peito do vagabundo, fazendo com que ele interrompa seus passos e caia morto (vá para 102). Se o "
-					+ "total for maior do que o seu índice de HABILIDADE, a faca passa voando pelo alvo, e você terá "
-					+ "que lutar contra os três vagabundos com sua espada (vá para 225).");
+			r018.setText("Você mira cuidadosamente e lança a faca no vagabundo da frente.");
+			Random d = new Random();
+			int testeForca = d.nextInt(12)+2;
+			if(testeForca<=heroi.getHabilidade()){
+				System.out.println("a faca penetra profundamente no "
+					+ "peito do vagabundo, fazendo com que ele interrompa seus passos e caia morto.");
+				System.out.println(r102.toString());
+			}else{
+				System.out.println("a faca passa voando pelo alvo, e você terá "
+					+ "que lutar contra os três vagabundos com sua espada.");
+				System.out.println(r225.toString());
+			}
 			
+			Referencia r019 = new Referencia();
+			refList.add(r019);
+			r019.setNumero(19);
+			r019.setText("Os dardos têm a ponta envenenada. Você perde 4 pontos de ENERGIA e 1 ponto de "
+					+ "HABILIDADE.");
+			heroi.setHabilidade(heroi.getHabilidade()-1);
+			heroi.setEnergiaAtual(heroi.getEnergiaAtual()-4);
+			if(heroi.getEnergiaAtual()<=0){
+				System.out.println(r401.toString());
+			}
+			System.out.println("Se você ainda estiver vivo e quiser continuar a tentar abrir a fecha dura, vá para "
+					+ "340. \nSe você preferir sair do aposento e subir as escadas para o andar de cima, vá para 60.");
+			do{
+				System.out.println("O que você fará?");
+				escolha = escolher.nextInt();
+				}while((escolha>2)||(escolha<1));
+			System.out.println(decisao(escolha, 340, 60, 0).toString());
 			
+			this.refList[0] = r000;
+			this.refList[1] = r001;
 			
-			
-			
-			
-			
-			
-			
-			
-			
+    		
 			
 			
 

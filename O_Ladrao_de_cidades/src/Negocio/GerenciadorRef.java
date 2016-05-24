@@ -334,12 +334,112 @@ public class GerenciadorRef {
 			r011.setNumero(11);
 			r011.setText("Os Trolls vêem o que você está fazendo e correm na direção da árvore. Você é forçado a deixar seu\n"
 					+ "escudo para trás. Perde, com isso, 1 ponto de HABILIDADE. Depois de subir rapidamente na\n"
-					+ "árvore, você se dá conta de que terá que pular uma distância de dois metros entre o galho e o topo"
-					+ "da muralha. Se estiver usando uma cota de malha de aço, você terá que tirá-la para pular com"
-					+ "segurança sobre a muralha (você perde 2 pontos de HABILIDADE). Abaixo, você vê os dois Trolls"
-					+ "correndo em volta da árvore, agitando as espadas na sua direção. Não há alternativa, a não ser pular"
-					+ "(vá para 358).");
-			heroi.setHabilidade(heroi.getHabilidade()-1);
+					+ "árvore, você se dá conta de que terá que pular uma distância de dois metros entre o galho e o topo\n"
+					+ "da muralha. Se estiver usando uma cota de malha de aço, você terá que tirá-la para pular com\n"
+					+ "segurança sobre a muralha (você perde 2 pontos de HABILIDADE). Abaixo, você vê os dois Trolls\n"
+					+ "correndo em volta da árvore, agitando as espadas na sua direção. Não há alternativa, a não ser pular.");
+			mochila.setEscudo(false);
+			mochila.isEscudo(heroi);
+			mochila.setCotaDeMalha(false);
+			mochila.isCotaDeMalha(heroi);
+			System.out.println(r358.toString());
+			
+			Referencia r012 = new Referencia();
+			refList.add(r012);
+			r012.setNumero(12);
+			r012.setText("Passados alguns minutos, você ouve passos que vêm descendo o corredor. A porta se abre, e um\n"
+					+ " homem entra no aposento, usando como única vestimenta uma toalha enrolada em volta de seu\n"
+					+ " estômago gordo. Você observa enquanto ele deixa cair a toalha e se abaixa lentamente na banheira\n"
+					+ "com um suspiro alto.\n Se quiser surpreendê-lo, desembainhando a espada e falando - Ahá! bem alto,"
+					+ "(Digite 1). \nSe preferir se esgueirar para fora do aposento de volta para o corredor enquanto ele\n"
+					+ "submerge, (Digite 2).");
+			do{
+				System.out.println("O que você fará?");
+				escolha = escolher.nextInt();
+				}while((escolha>2)||(escolha<1));
+			System.out.println(decisao(escolha, 176, 383, 0).toString());
+			
+			Referencia r013 = new Referencia();
+			refList.add(r013);
+			r013.setNumero(13);
+			r013.setText("Ao inspecionar o escorpião, você vê que é um broche. Você decide pô-lo na sua túnica de couro. O"
+					+ "broche possui propriedades curativas mágicas: depois de qualquer batalha, o broche imediatamente"
+					+ "recuperará 1 ponto de ENERGIA para o seu total. O que você fará em seguida?"
+					+ "Você pode, se ainda não o tiver feito, pegar o escorpião dourado (Digite 1)."
+					+ "Se preferir ignorá-lo, poderá subir as escadas (Digite 2), "
+					+ "ou sair da casa e seguir para o norte (Digite 3).");
+			mochila.setBrocheEscorpiao(true);
+			do{
+				System.out.println("O que você fará?");
+				escolha = escolher.nextInt();
+				}while((escolha>3)||(escolha<1));
+			System.out.println(decisao(escolha, 273, 80, 334).toString());
+			
+			Referencia r014 = new Referencia();
+			refList.add(r014);
+			r013.setNumero(14);
+			r014.setText("Logo que você pega uma das flores, ouve o barulho de folhas em movimento. Três das cercas\n"
+					+ " vegetais com forma de animais se desenraizaram e estão se aproximando de você.");
+			if(mochila.isAnelDeFogo()==true){
+				System.out.println(r237.toString());
+			}else{
+				System.out.println(r191.toString());
+			}
+			
+			Referencia r015 = new Referencia();
+			refList.add(r015);
+			r015.setNumero(15);
+			r015.setText("Você salta por cima das serpentes e corre para a porta. Teste sua Sorte!");
+			boolean lucky = heroi.usarSorte(heroi.getSorteAtual());
+			if(lucky == true){
+				System.out.println("Você teve sorte e chega até a porta em segurança!");
+				System.out.println(r075.toString());
+			}else{
+				System.out.println("Você não teve sorte e uma das serpentes dá um bote e "
+					+ "morde a sua perna");
+				System.out.println(r298.toString());
+			}
+			
+			Referencia r016 = new Referencia();
+			refList.add(r016);
+			r016.setNumero(16);
+			r016.setText("A bolsa contém 12 Peças de Ouro. Some 1 ponto de SORTE. Você sai da casa rapidamente, antes "
+					+ "que o proprietário descubra que você não é quem você diz ser. Você então segue adiante para o "
+					+ "norte, ao longo da Rua do Estábulo.");
+			heroi.setOuro(heroi.getOuro()+12);
+			heroi.setSorteAtual(heroi.getSorteAtual()+1);
+			System.out.println(r333.toString());
+			
+			Referencia r017 = new Referencia();
+			refList.add(r017);
+			r017.setNumero(17);
+			r017.setText("Caminhando pela rua estreita, você vê um homem usando trapos esfarrapados sentado na sarjeta.\n "
+					+ "Tem a cabeça enfiada nas mãos e a aparência totalmente miserável.\nSe quiser parar para falar com "
+					+ "ele, (Digite 1). \nSe preferir continuar a caminhar para o oeste, (Digite 2).");
+			do{
+				System.out.println("O que você fará?");
+				escolha = escolher.nextInt();
+				}while((escolha>2)||(escolha<1));
+			System.out.println(decisao(escolha, 331, 161, 0).toString());
+			
+			Referencia r018 = new Referencia();
+			refList.add(r018);
+			r018.setNumero(18);
+			r018.setText("Você mira cuidadosamente e lança a faca no vagabundo da frente. Jogue dois dados. "
+					+ "Se o total for igual ou menor do que o índice de HABILIDADE que você tem, a faca penetra profundamente no "
+					+ "peito do vagabundo, fazendo com que ele interrompa seus passos e caia morto (vá para 102). Se o "
+					+ "total for maior do que o seu índice de HABILIDADE, a faca passa voando pelo alvo, e você terá "
+					+ "que lutar contra os três vagabundos com sua espada (vá para 225).");
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			
 			

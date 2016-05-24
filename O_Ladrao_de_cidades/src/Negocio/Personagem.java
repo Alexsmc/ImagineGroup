@@ -7,8 +7,30 @@ public class Personagem {
 	private int habilidade; // Poder de força do personagem;
 	private int sorte; // O quanto de sorte ele tem;
 	private int ouro; // o quanto de ouro lhe possui;
+	private int energiaAtual;
+	private int sorteAtual;
 	
 	
+	public int getEnergiaAtual() {
+		return energiaAtual;
+	}
+	public void setEnergiaAtual(int energiaAtual) {
+		if(energiaAtual>energia){
+			this.energiaAtual = energia;
+		}else{
+			this.energiaAtual = energiaAtual;
+		}
+	}
+	public int getSorteAtual() {
+		return sorteAtual;
+	}
+	public void setSorteAtual(int sorteAtual) {
+		if(sorteAtual>sorte){
+			this.sorteAtual = sorte;
+		}else{
+			this.sorteAtual = sorteAtual;
+		}
+	}
 	public String getNome() {
 		return nome;
 	}
@@ -31,7 +53,7 @@ public class Personagem {
 		return sorte;
 	}
 	public void setSorte(int sorte) { // O numero entrará ramdomicamente de 1 - 6;
-		this.sorte = sorte;  // por definição o personagem tem como sorte a soma de 1d6 + 6;
+		this.sorte = sorte + 6;  // por definição o personagem tem como sorte a soma de 1d6 + 6;
 	}
 	public int getOuro() {
 		return ouro;
@@ -56,10 +78,13 @@ public class Personagem {
 	}
 	
 	@Override
-	public String toString();{
-		return "Nome: " + nome +"\n";
-				+ "Habilidade: " + habilidade;  
-				+ "" +;
+	public String toString(){
+		String ficha = "Nome: " + nome +"\n"
+				+ "Habilidade: " + habilidade +"\n"  
+				+ "Energia: " + energiaAtual + "/" + energia +"\n"
+				+ "Sorte: " + sorteAtual +"/"+ sorte + "\n"
+				+ "Ouro: " + ouro + "g";
+		return ficha;
 	}
 	
 }

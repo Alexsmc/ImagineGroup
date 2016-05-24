@@ -222,7 +222,10 @@ public class GerenciadorRef {
 			r006.setNumero(6);
 			r006.setText("Seu tom de voz se torna desagradável, e ela diz para você sair da casa dela, "
 					+ "porque certamente não há trapos lá, nem, falando nisso, qualquer outro tipo de rebotalho.");
+
 			
+			
+			//-------------------------------------------------------------------------------------------------------------------------------		
 			
 		}
 	}

@@ -221,8 +221,150 @@ public class GerenciadorRef {
 			refList.add(r006);
 			r006.setNumero(6);
 			r006.setText("Seu tom de voz se torna desagradável, e ela diz para você sair da casa dela, "
-					+ "porque certamente não há trapos lá, nem, falando nisso, qualquer outro tipo de rebotalho.");
+					+ "porque certamente não há trapos lá, nem, falando nisso, qualquer outro tipo de rebotalho.\nSe quiser obedecê-ela, saia da"
+					+ "casa e siga adiante para o norte, ao longo da Rua do Estábulo.(Digite 1) 333.\nSe quiser atravessar as"
+					+ "cortinas e ver quem está sendo tão rude com você, (Digite 2) vá para 88.");
+			do{
+				System.out.println("O que você fará?");
+				escolha = escolher.nextInt();
+				}while((escolha>2)||(escolha<1));
+			System.out.println(decisao(escolha, 333, 88, 0).toString());
+			
+			Referencia r007 = new Referencia();
+			refList.add(r007);
+			r007.setNumero(7);
+			r007.setText("Você sai do aposento na ponta dos pés e fecha a porta. No corredor, você abre a bolsa e encontra"
+					+ "seis pérolas negras. Some 2 pontos de SORTE. \nSe você ainda não o tiver feito, poderá abrir a outra"
+					+ "porta (Digite 1 232)\n ou sair do navio para continuar a sua busca em Port Blacksand, caminhando"
+					+ "para o norte pela Rua do Porto (Digite 2 78).");
+			heroi.setSorteAtual(heroi.getSorteAtual()+2);
+			do{
+				System.out.println("O que você fará?");
+				escolha = escolher.nextInt();
+				}while((escolha>2)||(escolha<1));
+			System.out.println(decisao(escolha, 232, 78, 0).toString());
+			
+			Referencia r008 = new Referencia();
+			refList.add(r008);
+			r008.setNumero(8);
+			r008.setText("A criatura põe o broche dourado na sua túnica de couro, e você paga o preço pedido. Você comprou"
+					+ "um amuleto da sorte - some 2 pontos de SORTE ao seu total. Feliz com a sua aquisição, você sai da"
+					+ "casa e segue para o norte.");
+			heroi.setSorteAtual(heroi.getSorteAtual()+2);
+			System.out.println(r334.toString());
+			
+			Referencia r009 = new Referencia();
+			refList.add(r009);
+			r009.setNumero(9);
+			r009.setText("Você se afasta do corpo vil de Zanbar Bone, esperando que ele comece a se decompor. Porém, você"
+					+ "escolheu errado!\nEle tira a flecha de seu peito e esfrega os olhos, retirando o composto. Ele vê você"
+					+ "e ri.\nVocê está hipnotizado pelo seu poder e incapaz de se mexer. Ele caminha até você e toca seu"
+					+ "rosto com seus dedos de esqueleto.\nSua vida está sendo rapidamente sugada e logo você iniciará sua"
+					+ "existência de morto-vivo a serviço de Zanbar Bone. (Game Over)");
+			
+			Referencia r010 = new Referencia();
+			refList.add(r010);
+			r010.setNumero(10);
+			r010.setText("O GUARDA está realmente aborrecido e o ataca com sua lança."
+					+ "GUARDA DA CIDADE"
+					+ "HABILIDADE 8"
+					+ "ENERGIA 7");
+			Npc monstro010 = new Npc();
+			monstro010.setNomeMonstro("GUARDA DA CIDADE");
+			monstro010.setMonstroHab(7);
+			monstro010.setMonstroEner(8);
+			int round=0;
+			do{
+        		Random d = new Random();
+        		int dado1 = d.nextInt(12)+2;
+       		System.out.println(monstro010.getNomeMonstro() + "Ataca com: " + (dado1 + monstro010.getMonstroHab()) + "de Força");
+        		int dado2 = d.nextInt(12)+2;
+        		System.out.println(heroi.getNome() + "Ataca com " + (dado2 + heroi.getHabilidade()) + "de Força");
+        			
+        if((heroi.getHabilidade()+dado2)>monstro010.getMonstroHab()+dado1){
+            		System.out.println("Heroi fere o monstro! "
+            			+ "Deseja usar sorte? (y/n)");
+            		Scanner escolher = new Scanner(System.in);
+            		String lucky = escolher.nextLine();
+            		if((lucky=="y")||(lucky=="Y")){
+            			boolean resultSorte = (heroi.usarSorte(heroi.getSorte()));
+            			if(resultSorte == true){
+            				monstro010.setMonstroEner(monstro010.getMonstroEner()-4);
+            			}else{
+            				monstro010.setMonstroEner(monstro010.getMonstroEner()-1);
+				}
+           			}else{
+				monstro010.setMonstroEner(monstro010.getMonstroEner()-2);	
+			}
+		}else {
+            		System.out.println("Heroi ferido! "
+            			+ "Deseja usar sorte? (y/n)");
+            		Scanner escolher = new Scanner(System.in);
+            		String lucky = escolher.nextLine();
+            		if((lucky=="y")||(lucky=="Y")){
+            			boolean resultSorte = (heroi.usarSorte(heroi.getSorte()));
+            			if(resultSorte == true){
+            				heroi.setEnergiaAtual(heroi.getEnergiaAtual()-1);
+            			}else{
+            				heroi.setEnergiaAtual(heroi.getEnergiaAtual()-3);
+				}
+           			}else{
+				heroi.setEnergia(heroi.getEnergia()-2);	
+			}
+		}
+        round++;
+     }while((heroi.getEnergiaAtual()>=0) || (monstro010.getMonstroEner()>=0));
+	
+			if(heroi.getEnergiaAtual()>monstro010.getMonstroEner()){
+	        	System.out.println("Você derrotou a criatura");
+	        	if(round<=6){
+	        		System.out.println(r212.toString());
+	        	}else{
+	        		System.out.println(r130.toString());
+	        	}
+	        	
+	        }
+	         else{
+	             System.out.println(r401.toString());
+	             
+	         }
+			
+			Referencia r011 = new Referencia();
+			refList.add(r011);
+			r011.setNumero(11);
+			r011.setText("Os Trolls vêem o que você está fazendo e correm na direção da árvore. Você é forçado a deixar seu\n"
+					+ "escudo para trás. Perde, com isso, 1 ponto de HABILIDADE. Depois de subir rapidamente na\n"
+					+ "árvore, você se dá conta de que terá que pular uma distância de dois metros entre o galho e o topo"
+					+ "da muralha. Se estiver usando uma cota de malha de aço, você terá que tirá-la para pular com"
+					+ "segurança sobre a muralha (você perde 2 pontos de HABILIDADE). Abaixo, você vê os dois Trolls"
+					+ "correndo em volta da árvore, agitando as espadas na sua direção. Não há alternativa, a não ser pular"
+					+ "(vá para 358).");
+			heroi.setHabilidade(heroi.getHabilidade()-1);
+			
+			
+			
 
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			
 			
 			//-------------------------------------------------------------------------------------------------------------------------------		

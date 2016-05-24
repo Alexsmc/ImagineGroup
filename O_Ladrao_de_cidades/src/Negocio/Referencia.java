@@ -80,7 +80,7 @@ public class Referencia{
             		int dado1 = d.nextInt(12)+2;
            		System.out.println(monstro.getNomeMonstro() + "Ataca com: " + (dado1 + monstro.getMonstroHab()) + "de Força");
             		int dado2 = d.nextInt(12)+2;
-            		System.out.println(heroi + "Ataca com " + (dado2 + heroi.getHabilidade()) + "de Força");
+            		System.out.println(heroi.getNome() + "Ataca com " + (dado2 + heroi.getHabilidade()) + "de Força");
             			
 			if((heroi.getHabilidade()+dado2)>monstro.getMonstroHab()+dado1){
                 		System.out.println("Heroi fere o monstro! "
@@ -88,7 +88,7 @@ public class Referencia{
                 		Scanner escolher = new Scanner(System.in);
                 		String lucky = escolher.nextLine();
                 		if((lucky=="y")||(lucky=="Y")){
-                			boolean resultSorte = (heroi.usarSorte(heroi.getSorte()));
+                			boolean resultSorte = (heroi.usarSorte(heroi.getSorteAtual()));
                 			if(resultSorte == true){
                 				monstro.setMonstroEner(monstro.getMonstroEner()-4);
                 			}else{
@@ -103,19 +103,19 @@ public class Referencia{
                 		Scanner escolher = new Scanner(System.in);
                 		String lucky = escolher.nextLine();
                 		if((lucky=="y")||(lucky=="Y")){
-                			boolean resultSorte = (heroi.usarSorte(heroi.getSorte()));
+                			boolean resultSorte = (heroi.usarSorte(heroi.getSorteAtual()));
                 			if(resultSorte == true){
-                				heroi.setEnergia(heroi.getEnergia()-1);
+                				heroi.setEnergiaAtual(heroi.getEnergiaAtual()-1);
                 			}else{
-                				heroi.setEnergia(heroi.getEnergia()-3);
+                				heroi.setEnergiaAtual(heroi.getEnergiaAtual()-3);
 					}
                			}else{
-					heroi.setEnergia(heroi.getEnergia()-2);	
+					heroi.setEnergiaAtual(heroi.getEnergiaAtual()-2);	
 				}
 			}
-         }while((heroi.getEnergia()>=0) || (monstro.getMonstroEner()>=0));
+         }while((heroi.getEnergiaAtual()>=0) || (monstro.getMonstroEner()>=0));
          
-	if(heroi.getEnergia()>monstro.getMonstroEner()){
+	if(heroi.getEnergiaAtual()>monstro.getMonstroEner()){
         	System.out.println("Você derrotou a criatura");
         	battle = true;
         }

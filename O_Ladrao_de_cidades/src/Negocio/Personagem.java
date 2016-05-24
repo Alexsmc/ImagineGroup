@@ -62,15 +62,15 @@ public class Personagem {
 		this.ouro = ouro; // o ouro é conquistado durante a ventura;
 	}
 	
-	public boolean usarSorte(int sorte){
+	public boolean usarSorte(int sorteAtual){
 		boolean resultado = false;
 		Random d = new Random();
 		int dado = d.nextInt(12)+2;
-		if(sorte>=dado){
-			sorte--;
+		if(sorteAtual>=dado){
+			sorteAtual--;
 			resultado = true;
 		}else{
-			sorte--;
+			sorteAtual--;
 		}
 		
 		return resultado;

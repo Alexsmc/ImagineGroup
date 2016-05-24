@@ -113,9 +113,8 @@ public class GerenciadorRef {
 					+ "fungadas e arranhadas nas janelas dos Cachorros da Lua que perambulam lá fora. Quando o dia nasce, você já está acordado e\n"
 					+ "vestido, determinado a chegar a Port Blacksand rapidamente para encontrar este homem, Nicodemus. \n"
 					+ "Ao sair da taverna, um gato preto passa correndo pelos seus pés e você quase tropeça; talvez um mau presságio!.");
-			r000.setBattle(false);
-			r000.setItenfound(false);
-			r000.setShop(false);
+			Mochila mochila = new Mochila();
+			mochila.setEspada(true);
 			heroi.setOuro(heroi.getOuro()+30);
 			System.out.println(r000.toString());
 			
@@ -123,26 +122,23 @@ public class GerenciadorRef {
 			Referencia r001 = new Referencia();
 			refList.add(r001);
 			r001.setNumero(1);
-			r001.setText("A caminhada para Port Blacksand o leva na direção do oeste por uns 80 quilômetros,"
-					+ "atravessando	planícies e subindo serras. Felizmente, não acontece nenhum encontro perigoso. Finalmente, você"
-					+ "chega à costa e vê a alta muralha que circunda Port Blacksand e o aglomerado de construções"
-					+ "que se projeta para o mar como uma feia mancha negra. Há navios ancorados no porto e fumaça"
-					+ "subindo suavemente de chaminés. Parece suficientemente pacífico, e somente quando o vento muda,"
-					+ "trazendo o cheiro de podridão na brisa, você se lembrada natureza cruel deste lugar notório."
-					+ "Seguindo a estrada empoeirada para o norte ao longo da costa, na direção dos portões da cidade,"
-					+ "você começa a notar alguns sinais assustadores - crânios em espetos de madeira, homens"
-					+ "morrendo	de fome em jaulas suspensas nas muralhas da cidade e bandeiras negras em toda parte. Ao se"
-					+ "aproximar do portão principal, um frio corre pela sua espinha, e você instintivamente segura o"
-					+ "cabo	de sua espada para se reanimar. No portão, você se depara com um guarda alto, usando uma"
-					+ "cota de malha de aço e um elmo de ferro. Ele avança, barrando a sua passagem com a lança, e diz:"
-					+ "- Quem quer entrar em Port Blacksand sem ser convidado? Explique o quê está fazendo aqui ou volte pelo"
-					+ "caminho que veio. Você:");
-			r001.setDecisao1("Dirá a ele que quer ser levado a Nicodemus?(digite 1)");
-			r001.setDecisao2("Dirá a ele que quer vender alguns objetos roubados?(digite 2)");
-			r001.setDecisao3("Atacará o guarda rapidamente com sua espada?(digite 3)");
-			r001.setBattle(false);
-			r001.setItenfound(false);
-			r001.setShop(false);
+			r001.setText("A caminhada para Port Blacksand o leva na direção do oeste por uns 80 quilômetros,\n"
+					+ "atravessando	planícies e subindo serras. Felizmente, não acontece nenhum encontro perigoso.\n Finalmente, você"
+					+ "chega à costa e vê a alta muralha que circunda Port Blacksand e o aglomerado de construções\n"
+					+ "que se projeta para o mar como uma feia mancha negra. Há navios ancorados no porto e fumaça\n"
+					+ "subindo suavemente de chaminés. Parece suficientemente pacífico, e somente quando o vento muda,\n"
+					+ "trazendo o cheiro de podridão na brisa, você se lembrada natureza cruel deste lugar notório.\n"
+					+ "Seguindo a estrada empoeirada para o norte ao longo da costa, na direção dos portões da cidade,\n"
+					+ "você começa a notar alguns sinais assustadores - crânios em espetos de madeira, homens\n"
+					+ "morrendo	de fome em jaulas suspensas nas muralhas da cidade e bandeiras negras em toda parte.\n Ao se"
+					+ "aproximar do portão principal, um frio corre pela sua espinha, e você instintivamente segura o\n"
+					+ "cabo	de sua espada para se reanimar. No portão, você se depara com um guarda alto, usando uma\n"
+					+ "cota de malha de aço e um elmo de ferro. Ele avança, barrando a sua passagem com a lança, e diz:\n"
+					+ "- Quem quer entrar em Port Blacksand sem ser convidado? Explique o quê está fazendo aqui ou volte pelo\n"
+					+ "caminho que veio. Você:\n"
+					+ "Dirá a ele que quer ser levado a Nicodemus?(digite 1)"
+					+ "Dirá a ele que quer vender alguns objetos roubados?(digite 2)"
+					+ "Atacará o guarda rapidamente com sua espada?(digite 3)");
 			System.out.println(r001.toString());
 			System.out.println("O que você fará?");
 			escolher = new Scanner(System.in);
@@ -152,16 +148,16 @@ public class GerenciadorRef {
 			Referencia r002 = new Referencia();
 			refList.add(r002);
 			r002.setNumero(2);
-			r002.setText("Você retira a pulseira do seu braço e a joga no monstro que se aproxima. Ela cai sobre a sua"
-					+ "carapaça, semelhante a uma armadura, e gruda nela como se estivesse colada. Você fica então"
-					+ "observando enquanto a pulseira começa a queimar, penetrando na carapaça, o corpo da Centopéia "
-					+ "Gigante. A fumaça sai do orifício exatamente redondo e, à medida em que a pulseira queima, "
-					+ "penetrando cada vez mais, você pode ver que os movimentos frenéticos da Centopéia são os "
-					+ "estertores da morte. Finalmente, ela fica imóvel, e você consegue se esgueirar entre seu corpo e o"
-					+ "teto do túnel. Você continua andando pelo túnel, que termina em uma grade de ferro, através da "
-					+ "qual passa o esgoto.");
-			r002.setDecisao1("Se quiser retirar a grade, digite 1");
-			r002.setDecisao2("Se preferir caminhar de volta para o buraco de entrada, digite 2");
+			r002.setText("Você retira a pulseira do seu braço e a joga no monstro que se aproxima. Ela cai sobre a sua\n"
+					+ "carapaça, semelhante a uma armadura, e gruda nela como se estivesse colada. Você fica então\n"
+					+ "observando enquanto a pulseira começa a queimar, penetrando na carapaça, o corpo da Centopéia\n "
+					+ "Gigante. A fumaça sai do orifício exatamente redondo e, à medida em que a pulseira queima, \n"
+					+ "penetrando cada vez mais, você pode ver que os movimentos frenéticos da Centopéia são os \n"
+					+ "estertores da morte. Finalmente, ela fica imóvel, e você consegue se esgueirar entre seu corpo e o\n"
+					+ "teto do túnel. Você continua andando pelo túnel, que termina em uma grade de ferro, através da\n "
+					+ "qual passa o esgoto.\n"
+					+ "Se quiser retirar a grade, (Digite 1)\n"
+					+ "Se preferir caminhar de volta para o buraco de entrada, (Digite 2)");
 			do{
 				System.out.println("O que você fará?");
 				escolha = escolher.nextInt();
@@ -171,10 +167,10 @@ public class GerenciadorRef {
 			Referencia r003 = new Referencia();
 			refList.add(r003);
 			r003.setNumero(3);
-			r003.setText("O homem pára de jogar e diz que ele pode lhe trazer boa sorte. Pela soma de três Peças de Ouro,"
-					+ "ele cantará uma canção para você que lhe trará boa sorte.");
-			r003.setDecisao1("Se quiser pagar o músico, digite 1");
-			r003.setDecisao2("Se não acreditar nele, poderá seguir em frente para a próxima barraca (digite 2).");
+			r003.setText("O homem pára de jogar e diz que ele pode lhe trazer boa sorte. Pela soma de três Peças de Ouro,\n"
+					+ "ele cantará uma canção para você que lhe trará boa sorte.\n"
+					+ "Se quiser pagar o músico, (digite 1).\n"
+					+ "Se não acreditar nele, poderá seguir em frente para a próxima barraca (digite 2).");
 			do{
 				System.out.println("O que você fará?");
 				escolha = escolher.nextInt();
@@ -187,11 +183,11 @@ public class GerenciadorRef {
 			Referencia r004 = new Referencia();
 			refList.add(r004);
 			r004.setNumero(4);
-			r004.setText("Você ouve uma campainha tocar do outro lado da porta e, poucos minutos depois, ela é aberta por"
-					+ "um homem magro de pele pálida, com olhos fundos e escuros, usando um uniforme de servente."
-					+ "Com uma voz fria e sibilante, ele diz: - Sim?");
-			r004.setDecisao1("Se quiser dizer a ele que você é um via jante perdido, digite 1.");
-			r004.setDecisao2("Se quiser atacar o homem com sua espada, digite 2.");
+			r004.setText("Você ouve uma campainha tocar do outro lado da porta e, poucos minutos depois, ela é aberta por\n"
+					+ "um homem magro de pele pálida, com olhos fundos e escuros, usando um uniforme de servente.\n"
+					+ "Com uma voz fria e sibilante, ele diz: - Sim?\n"
+					+ "Se quiser dizer a ele que você é um viajante perdido, (Digite 1).\n"
+					+ "Se quiser atacar o homem com sua espada, (Digite 2).\n");
 			do{
 				System.out.println("O que você fará?");
 				escolha = escolher.nextInt();
@@ -201,9 +197,12 @@ public class GerenciadorRef {
 			Referencia r005 = new Referencia();
 			refList.add(r005);
 			r005.setNumero(5);
-			r005.setText("Desembainhando sua espada, você salta por cima do balcão para atacar o HOMEM-ORCA, que"
-					+ "rapidamente pega a sua acha de mão. Você logo se dá conta de que o Homem-Orca tem prática"
-					+ "no uso da arma dele.");
+			r005.setText("Desembainhando sua espada, você salta por cima do balcão para atacar o HOMEM-ORCA, que\n"
+					+ "rapidamente pega a sua acha de mão. Você logo se dá conta de que o Homem-Orca tem prática\n"
+					+ "no uso da arma dele.\n"
+					+ "HOMEM-ORCA\n"
+					+ "HABILIDADE: 8\n"
+					+ "ENERGIA: 5");
 			Npc monstro005 = new Npc();
 			monstro005.setNomeMonstro("Homem-Orca");
 			monstro005.setMonstroEner(5);
@@ -233,10 +232,10 @@ public class GerenciadorRef {
 			Referencia r007 = new Referencia();
 			refList.add(r007);
 			r007.setNumero(7);
-			r007.setText("Você sai do aposento na ponta dos pés e fecha a porta. No corredor, você abre a bolsa e encontra"
-					+ "seis pérolas negras. Some 2 pontos de SORTE. \nSe você ainda não o tiver feito, poderá abrir a outra"
-					+ "porta (Digite 1 232)\n ou sair do navio para continuar a sua busca em Port Blacksand, caminhando"
-					+ "para o norte pela Rua do Porto (Digite 2 78).");
+			r007.setText("Você sai do aposento na ponta dos pés e fecha a porta. No corredor, você abre a bolsa e encontra\n"
+					+ "seis pérolas negras. Some 2 pontos de SORTE. \nSe você ainda não o tiver feito, poderá abrir a outra\n"
+					+ "porta (Digite 1)\n ou sair do navio para continuar a sua busca em Port Blacksand, caminhando\n"
+					+ "para o norte pela Rua do Porto (Digite 2).");
 			heroi.setSorteAtual(heroi.getSorteAtual()+2);
 			do{
 				System.out.println("O que você fará?");
@@ -247,10 +246,11 @@ public class GerenciadorRef {
 			Referencia r008 = new Referencia();
 			refList.add(r008);
 			r008.setNumero(8);
-			r008.setText("A criatura põe o broche dourado na sua túnica de couro, e você paga o preço pedido. Você comprou"
-					+ "um amuleto da sorte - some 2 pontos de SORTE ao seu total. Feliz com a sua aquisição, você sai da"
+			r008.setText("A criatura põe o broche dourado na sua túnica de couro, e você paga o preço pedido.\n Você comprou"
+					+ "um amuleto da sorte - some 2 pontos de SORTE ao seu total. \nFeliz com a sua aquisição, você sai da"
 					+ "casa e segue para o norte.");
 			heroi.setSorteAtual(heroi.getSorteAtual()+2);
+			System.out.println("Sorte: " + heroi.getSorteAtual());
 			System.out.println(r334.toString());
 			
 			Referencia r009 = new Referencia();
@@ -265,9 +265,9 @@ public class GerenciadorRef {
 			Referencia r010 = new Referencia();
 			refList.add(r010);
 			r010.setNumero(10);
-			r010.setText("O GUARDA está realmente aborrecido e o ataca com sua lança."
-					+ "GUARDA DA CIDADE"
-					+ "HABILIDADE 8"
+			r010.setText("O GUARDA está realmente aborrecido e o ataca com sua lança.\n"
+					+ "GUARDA DA CIDADE\n"
+					+ "HABILIDADE 8\n"
 					+ "ENERGIA 7");
 			Npc monstro010 = new Npc();
 			monstro010.setNomeMonstro("GUARDA DA CIDADE");

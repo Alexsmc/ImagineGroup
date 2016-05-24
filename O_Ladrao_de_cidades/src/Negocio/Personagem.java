@@ -67,10 +67,10 @@ public class Personagem {
 		Random d = new Random();
 		int dado = d.nextInt(12)+2;
 		if(sorteAtual>=dado){
-			sorteAtual--;
+			this.sorteAtual--;
 			resultado = true;
 		}else{
-			sorteAtual--;
+			this.sorteAtual--;
 		}
 		
 		return resultado;

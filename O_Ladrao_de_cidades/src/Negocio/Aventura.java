@@ -1,5 +1,6 @@
 package Negocio;
 
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -12,7 +13,7 @@ public class Aventura {
 	private static Scanner r;
 	private static Random d;
 
-	public static void main(String[] args){
+	public static void main(String[] args) throws IOException{
 		
 		r = new Scanner(System.in);
 		Personagem heroi = new Personagem();
@@ -40,8 +41,17 @@ public class Aventura {
 				+ "de sorte diminuirá em 1 ponto, fazendo assim ser cada vez mais difícil passar nos testes futuros. he he he...");
 		System.out.println("Essa é a sua ficha, tenha uma ótima aventura, ha ha ha ha....");
 		System.out.println(heroi);
-		GerenciadorRef mundo = new GerenciadorRef();
-		mundo.loadRef(heroi);
+		//heroi.usarSorte(heroi.getSorteAtual());
+		System.out.println(heroi.getSorteAtual());
+		Referencia teste = new Referencia();
+		Npc nono = new Npc();
+		nono.setNomeMonstro("Gigante");
+		nono.setMonstroEner(10);
+		nono.setMonstroHab(6);
+		teste.isBattle(heroi, nono);
+		System.out.println("Sorte atual: " + heroi.getSorteAtual());
+		//GerenciadorRef mundo = new GerenciadorRef();
+		//mundo.loadRef(heroi);
 		
 	
 	}

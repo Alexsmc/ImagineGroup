@@ -5,8 +5,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class Teste {
+	private static Scanner r;
+
 	public static void main(String[] args) throws IOException {
-		Scanner r = new Scanner(System.in);
+		r = new Scanner(System.in);
 		Random d = new Random();
 		r = new Scanner(System.in);
 		Personagem heroi = new Personagem();

@@ -4,6 +4,7 @@ public class Npc {
 	private int MonstroHab;
 	private int MonstroEner;
 	private String NomeMonstro;
+	private boolean live;
 		
 	public String getNomeMonstro() {
 		return NomeMonstro;
@@ -33,5 +34,13 @@ public class Npc {
 	public String toString(){
 		String fichaMonstro = NomeMonstro + "\nHabilidade: " + MonstroHab + "\nEnergia " + MonstroEner;
 		return fichaMonstro;
+	}
+
+	public boolean isLive() {
+		return live;
+	}
+
+	public void setLive(boolean live) {
+		this.live = live;
 	}
 }

@@ -169,82 +169,54 @@ public class GerenciadorRef {
 					+ "Se quiser pagar o músico, (digite 1).\n"
 					+ "Se não acreditar nele, poderá seguir em frente para a próxima barraca (digite 2).");
 						
-			/Referencia r004 = new Referencia();
-			refList.add(r004);
+			Referencia r004 = new Referencia();
+			this.refList[4] = (r004);
 			r004.setNumero(4);
 			r004.setText("Você ouve uma campainha tocar do outro lado da porta e, poucos minutos depois, ela é aberta por\n"
 					+ "um homem magro de pele pálida, com olhos fundos e escuros, usando um uniforme de servente.\n"
 					+ "Com uma voz fria e sibilante, ele diz: - Sim?\n"
 					+ "Se quiser dizer a ele que você é um viajante perdido, (Digite 1).\n"
 					+ "Se quiser atacar o homem com sua espada, (Digite 2).\n");
-			do{
-				System.out.println("O que você fará?");
-				escolha = escolher.nextInt();
-				}while((escolha>2)||(escolha<1));
-			System.out.println(decisao(escolha, 399, 35, 0).toString());
-			
+						
 			Referencia r005 = new Referencia();
-			refList.add(r005);
+			this.refList[5] = (r005);
 			r005.setNumero(5);
-			r005.setText("Desembainhando sua espada, você salta por cima do balcão para atacar o HOMEM-ORCA, que\n"
-					+ "rapidamente pega a sua acha de mão. Você logo se dá conta de que o Homem-Orca tem prática\n"
-					+ "no uso da arma dele.\n"
-					+ "HOMEM-ORCA\n"
-					+ "HABILIDADE: 8\n"
-					+ "ENERGIA: 5");
 			Npc monstro005 = new Npc();
+			r005.setMonstro(monstro005);
 			monstro005.setNomeMonstro("Homem-Orca");
 			monstro005.setMonstroEner(5);
 			monstro005.setMonstroHab(8);
-			System.out.println(monstro005);
-			
-			r005.isBattle(heroi, monstro005);
-			if(r005.isBattle(heroi, monstro005)==true){
-				System.out.println(r371.toString());
-			}else{
-				System.out.println(r401.toString);
-			}
-			
+			r005.setText("Desembainhando sua espada, você salta por cima do balcão para atacar o HOMEM-ORCA, que\n"
+					+ "rapidamente pega a sua acha de mão. Você logo se dá conta de que o Homem-Orca tem prática\n"
+					+ "no uso da arma dele.\n" + monstro005.toString());
+				
 			Referencia r006 = new Referencia();
-			refList.add(r006);
+			this.refList[6] = (r006);
 			r006.setNumero(6);
 			r006.setText("Seu tom de voz se torna desagradável, e ela diz para você sair da casa dela, "
 					+ "porque certamente não há trapos lá, nem, falando nisso, qualquer outro tipo de rebotalho.\nSe quiser obedecê-ela, saia da"
 					+ "casa e siga adiante para o norte, ao longo da Rua do Estábulo.(Digite 1) 333.\nSe quiser atravessar as"
 					+ "cortinas e ver quem está sendo tão rude com você, (Digite 2) vá para 88.");
-			do{
-				System.out.println("O que você fará?");
-				escolha = escolher.nextInt();
-				}while((escolha>2)||(escolha<1));
-			System.out.println(decisao(escolha, 333, 88, 0).toString());
+			
 			
 			Referencia r007 = new Referencia();
-			refList.add(r007);
+			this.refList[7] = (r007);
 			r007.setNumero(7);
 			r007.setText("Você sai do aposento na ponta dos pés e fecha a porta. No corredor, você abre a bolsa e encontra\n"
 					+ "seis pérolas negras. Some 2 pontos de SORTE. \nSe você ainda não o tiver feito, poderá abrir a outra\n"
 					+ "porta (Digite 1)\n ou sair do navio para continuar a sua busca em Port Blacksand, caminhando\n"
 					+ "para o norte pela Rua do Porto (Digite 2).");
-			heroi.setSorteAtual(heroi.getSorteAtual()+2);
-			do{
-				System.out.println("O que você fará?");
-				escolha = escolher.nextInt();
-				}while((escolha>2)||(escolha<1));
-			System.out.println(decisao(escolha, 232, 78, 0).toString());
-			
+						
 			Referencia r008 = new Referencia();
-			refList.add(r008);
+			this.refList[8] = (r008);
 			r008.setNumero(8);
 			r008.setText("A criatura põe o broche dourado na sua túnica de couro, e você paga o preço pedido.\n Você comprou"
 					+ "um amuleto da sorte - some 2 pontos de SORTE ao seu total. \nFeliz com a sua aquisição, você sai da"
 					+ "casa e segue para o norte.");
-			heroi.setSorteAtual(heroi.getSorteAtual()+2);
-			System.out.println("Sorte: " + heroi.getSorteAtual());
-			System.out.println(r334.toString());
-			
+						
 			Referencia r009 = new Referencia();
-			refList.add(r009);
-			r009.setNumero(9);
+			this.refList[9] = (r009);
+			r009.setNumero(10);
 			r009.setText("Você se afasta do corpo vil de Zanbar Bone, esperando que ele comece a se decompor. Porém, você"
 					+ "escolheu errado!\nEle tira a flecha de seu peito e esfrega os olhos, retirando o composto. Ele vê você"
 					+ "e ri.\nVocê está hipnotizado pelo seu poder e incapaz de se mexer. Ele caminha até você e toca seu"
@@ -252,17 +224,16 @@ public class GerenciadorRef {
 					+ "existência de morto-vivo a serviço de Zanbar Bone. (Game Over)");
 			
 			Referencia r010 = new Referencia();
-			refList.add(r010);
+			this.refList[10] = (r010);
 			r010.setNumero(10);
-			r010.setText("O GUARDA está realmente aborrecido e o ataca com sua lança.\n"
-					+ "GUARDA DA CIDADE\n"
-					+ "HABILIDADE 8\n"
-					+ "ENERGIA 7");
 			Npc monstro010 = new Npc();
+			r010.setMonstro(monstro010);
 			monstro010.setNomeMonstro("GUARDA DA CIDADE");
 			monstro010.setMonstroHab(7);
 			monstro010.setMonstroEner(8);
-			int round=0;
+			r010.setText("O GUARDA está realmente aborrecido e o ataca com sua lança.\n"+ monstro010.toString());
+			
+			/*int round=0;
 			do{
         		Random d = new Random();
         		int dado1 = d.nextInt(12)+2;
@@ -316,25 +287,20 @@ public class GerenciadorRef {
 	         else{
 	             System.out.println(r401.toString());
 	             
-	         }
+	         }*/
 			
-			Referencia r011 = new Referencia();
-			refList.add(r011);
-			r011.setNumero(11);
+        	Referencia r011 = new Referencia();
+    		this.refList[11] = (r011);
+    		r011.setNumero(11);
 			r011.setText("Os Trolls vêem o que você está fazendo e correm na direção da árvore. Você é forçado a deixar seu\n"
 					+ "escudo para trás. Perde, com isso, 1 ponto de HABILIDADE. Depois de subir rapidamente na\n"
 					+ "árvore, você se dá conta de que terá que pular uma distância de dois metros entre o galho e o topo\n"
 					+ "da muralha. Se estiver usando uma cota de malha de aço, você terá que tirá-la para pular com\n"
 					+ "segurança sobre a muralha (você perde 2 pontos de HABILIDADE). Abaixo, você vê os dois Trolls\n"
 					+ "correndo em volta da árvore, agitando as espadas na sua direção. Não há alternativa, a não ser pular.");
-			mochila.setEscudo(false);
-			mochila.isEscudo(heroi);
-			mochila.setCotaDeMalha(false);
-			mochila.isCotaDeMalha(heroi);
-			System.out.println(r358.toString());
 			
 			Referencia r012 = new Referencia();
-			refList.add(r012);
+			this.refList[12] = (r012);
 			r012.setNumero(12);
 			r012.setText("Passados alguns minutos, você ouve passos que vêm descendo o corredor. A porta se abre, e um\n"
 					+ " homem entra no aposento, usando como única vestimenta uma toalha enrolada em volta de seu\n"
@@ -342,14 +308,9 @@ public class GerenciadorRef {
 					+ "com um suspiro alto.\n Se quiser surpreendê-lo, desembainhando a espada e falando - Ahá! bem alto,"
 					+ "(Digite 1). \nSe preferir se esgueirar para fora do aposento de volta para o corredor enquanto ele\n"
 					+ "submerge, (Digite 2).");
-			do{
-				System.out.println("O que você fará?");
-				escolha = escolher.nextInt();
-				}while((escolha>2)||(escolha<1));
-			System.out.println(decisao(escolha, 176, 383, 0).toString());
-			
+						
 			Referencia r013 = new Referencia();
-			refList.add(r013);
+			this.refList[13] = (r013);
 			r013.setNumero(13);
 			r013.setText("Ao inspecionar o escorpião, você vê que é um broche. Você decide pô-lo na sua túnica de couro. O"
 					+ "broche possui propriedades curativas mágicas: depois de qualquer batalha, o broche imediatamente"
@@ -357,29 +318,18 @@ public class GerenciadorRef {
 					+ "Você pode, se ainda não o tiver feito, pegar o escorpião dourado (Digite 1)."
 					+ "Se preferir ignorá-lo, poderá subir as escadas (Digite 2), "
 					+ "ou sair da casa e seguir para o norte (Digite 3).");
-			mochila.setBrocheEscorpiao(true);
-			do{
-				System.out.println("O que você fará?");
-				escolha = escolher.nextInt();
-				}while((escolha>3)||(escolha<1));
-			System.out.println(decisao(escolha, 273, 80, 334).toString());
-			
+						
 			Referencia r014 = new Referencia();
-			refList.add(r014);
-			r013.setNumero(14);
+			this.refList[14] = (r014);
+			r014.setNumero(14);
 			r014.setText("Logo que você pega uma das flores, ouve o barulho de folhas em movimento. Três das cercas\n"
 					+ " vegetais com forma de animais se desenraizaram e estão se aproximando de você.");
-			if(mochila.isAnelDeFogo()==true){
-				System.out.println(r237.toString());
-			}else{
-				System.out.println(r191.toString());
-			}
-			
+						
 			Referencia r015 = new Referencia();
-			refList.add(r015);
-			r015.setNumero(15);
+			this.refList[15] = (r015);
+			r010.setNumero(15);
 			r015.setText("Você salta por cima das serpentes e corre para a porta. Teste sua Sorte!");
-			boolean lucky = heroi.usarSorte(heroi.getSorteAtual());
+			/*boolean lucky = heroi.usarSorte(heroi.getSorteAtual());
 			if(lucky == true){
 				System.out.println("Você teve sorte e chega até a porta em segurança!");
 				System.out.println(r075.toString());
@@ -387,35 +337,29 @@ public class GerenciadorRef {
 				System.out.println("Você não teve sorte e uma das serpentes dá um bote e "
 					+ "morde a sua perna");
 				System.out.println(r298.toString());
-			}
+			}*/
 			
 			Referencia r016 = new Referencia();
-			refList.add(r016);
+			this.refList[16] = (r016);
 			r016.setNumero(16);
 			r016.setText("A bolsa contém 12 Peças de Ouro. Some 1 ponto de SORTE. Você sai da casa rapidamente, antes "
 					+ "que o proprietário descubra que você não é quem você diz ser. Você então segue adiante para o "
 					+ "norte, ao longo da Rua do Estábulo.");
-			heroi.setOuro(heroi.getOuro()+12);
-			heroi.setSorteAtual(heroi.getSorteAtual()+1);
-			System.out.println(r333.toString());
-			
+						
 			Referencia r017 = new Referencia();
-			refList.add(r017);
+			this.refList[17] = (r017);
 			r017.setNumero(17);
 			r017.setText("Caminhando pela rua estreita, você vê um homem usando trapos esfarrapados sentado na sarjeta.\n "
 					+ "Tem a cabeça enfiada nas mãos e a aparência totalmente miserável.\nSe quiser parar para falar com "
 					+ "ele, (Digite 1). \nSe preferir continuar a caminhar para o oeste, (Digite 2).");
-			do{
-				System.out.println("O que você fará?");
-				escolha = escolher.nextInt();
-				}while((escolha>2)||(escolha<1));
-			System.out.println(decisao(escolha, 331, 161, 0).toString());
+			
 			
 			Referencia r018 = new Referencia();
-			refList.add(r018);
-			r018.setNumero(18);
+			this.refList[18] = (r018);
+			r010.setNumero(18);
 			r018.setText("Você mira cuidadosamente e lança a faca no vagabundo da frente.");
-			Random d = new Random();
+			
+			/*Random d = new Random();
 			int testeForca = d.nextInt(12)+2;
 			if(testeForca<=heroi.getHabilidade()){
 				System.out.println("a faca penetra profundamente no "
@@ -425,14 +369,15 @@ public class GerenciadorRef {
 				System.out.println("a faca passa voando pelo alvo, e você terá "
 					+ "que lutar contra os três vagabundos com sua espada.");
 				System.out.println(r225.toString());
-			}
+			}*/
 			
 			Referencia r019 = new Referencia();
-			refList.add(r019);
+			this.refList[19] = (r019);
 			r019.setNumero(19);
 			r019.setText("Os dardos têm a ponta envenenada. Você perde 4 pontos de ENERGIA e 1 ponto de "
 					+ "HABILIDADE.");
-			heroi.setHabilidade(heroi.getHabilidade()-1);
+			
+			/*heroi.setHabilidade(heroi.getHabilidade()-1);
 			heroi.setEnergiaAtual(heroi.getEnergiaAtual()-4);
 			if(heroi.getEnergiaAtual()<=0){
 				System.out.println(r401.toString());
@@ -443,11 +388,9 @@ public class GerenciadorRef {
 				System.out.println("O que você fará?");
 				escolha = escolher.nextInt();
 				}while((escolha>2)||(escolha<1));
-			System.out.println(decisao(escolha, 340, 60, 0).toString());
+			System.out.println(decisao(escolha, 340, 60, 0).toString());*/
 			
-			this.refList[0] = r000;
-			this.refList[1] = r001;
-			
+					
     		
 			
 			

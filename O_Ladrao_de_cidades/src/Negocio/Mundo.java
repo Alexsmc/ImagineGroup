@@ -42,7 +42,7 @@ public class Mundo {
 		
 		Npc monstroR5 = new Npc();
 		monstroR5.setNomeMonstro("Arlindo");
-		monstroR5.setMonstroHab(70);
+		monstroR5.setMonstroHab(3);
 		monstroR5.setMonstroEner(12);
 		
 		Referencia r5 = new Referencia();

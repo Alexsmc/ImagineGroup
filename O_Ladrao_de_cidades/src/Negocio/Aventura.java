@@ -17,6 +17,7 @@ public class Aventura {
 		
 		r = new Scanner(System.in);
 		Personagem heroi = new Personagem();
+		Mochila mochila = new Mochila();
 		System.out.println("Olá! Bem Vindo a Cidade dos Ladrões, uma aventura que vai mudar a sua maneira de ver as coisas, hehehe \n"
 				+ "Bom, primeiro vamos ao que interessa, apresente-se...");
 		System.out.println("Digite o seu nome: ");
@@ -41,6 +42,7 @@ public class Aventura {
 				+ "de sorte diminuirá em 1 ponto, fazendo assim ser cada vez mais difícil passar nos testes futuros. he he he...");
 		System.out.println("Essa é a sua ficha, tenha uma ótima aventura, ha ha ha ha....");
 		System.out.println(heroi);
+		//Mochila mochila = new Mochila();
 		//heroi.usarSorte(heroi.getSorteAtual());
 		/*System.out.println(heroi.getSorteAtual());
 		Referencia teste = new Referencia();
@@ -51,8 +53,8 @@ public class Aventura {
 		System.out.println(nono.toString());
 		teste.isBattle(heroi, nono);*/
 		//System.out.println("Sorte atual: " + heroi.getSorteAtual());
-		GerenciadorRef mundo = new GerenciadorRef();
-		mundo.loadRef(heroi);
+		GerenciadorRef mundo = new GerenciadorRef(heroi, mochila);
+		mundo.jogar();
 		
 	
 	}

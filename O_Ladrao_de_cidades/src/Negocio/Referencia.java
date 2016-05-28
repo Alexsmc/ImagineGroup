@@ -1,12 +1,11 @@
  package Negocio;
  
- import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
  
 public class Referencia{
 	private String text;
-	private Npc monstro;
+	private Npc[] monstro;
 	private int numero;
 	private boolean battle;
 	private boolean shop;
@@ -138,20 +137,5 @@ public class Referencia{
 	public void setItenfound(boolean itenfound) {
 		this.itenfound = itenfound;
 	}
-	public void oferecerProvisao(Mochila mochila, Personagem heroi){
-		System.out.println("Deseja usar provisões? (y/n)");
-		int quantidade=0;
-		char decisao = r.nextLine().charAt(0);
-		if(decisao == 'y'|| decisao == 'Y'){
-			do{
-			System.out.println("Quantas deseja usar? Possui(" + mochila.getProvisao() + ")");
-			quantidade = r.nextInt();
-			}while(quantidade<=mochila.getProvisao());
-			for(int x=0; x<quantidade;x++){
-				mochila.usarProvisao(heroi);
-				System.out.println("Você Recuperou 4 de energia!");
-			}
-			System.out.println("Energia Atual: " + heroi.getEnergiaAtual() + "/" + heroi.getEnergia());
-		}
-	}
+	
 }

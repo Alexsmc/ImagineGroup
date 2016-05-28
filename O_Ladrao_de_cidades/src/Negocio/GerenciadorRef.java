@@ -12,19 +12,21 @@ public class GerenciadorRef {
 	private Mochila mochila;
 	private int escolha;
 	
-	private Referencia decisao(int escolha, int opc1, int opc2, int opc3){
+private Referencia decisao(int escolha, int opc1, int opc2, int opc3, int opc4){
 		
 		switch (escolha) {
 		case 1:
 			return this.refList[opc1];
 		case 2:
 			return this.refList[opc2];
-		default:
+		case 3:
 			return this.refList[opc3];
+		default:
+			return this.refList[opc4];
 		}
 	}
 	
-	private void loadRef(Personagem heroi, Mochila mochila){
+	public GerenciadorRef(Personagem heroi, Mochila mochila){
 		this.creatRef();
 		this.heroi = heroi;
 		this.mochila = mochila;
@@ -390,22 +392,738 @@ public class GerenciadorRef {
 				}while((escolha>2)||(escolha<1));
 			System.out.println(decisao(escolha, 340, 60, 0).toString());*/
 			
-					
-    		
+			Referencia r020 = new Referencia();
+			this.refList[20] = (r020);
+			r020.setNumero(20);
+			r020.setText("Os bolsos do pirata contêm apenas um pedaço de pão azedo. Você o larga para começar a "
+					+ "examinaras caixas de madeira e os barris no convés do navio (vá para 84).");
 			
+			Referencia r021 = new Referencia();
+			this.refList[21] = (r021);
+			r021.setNumero(21);
+			r021.setText("Olhando para cima, você vê que a escada continua direto até o topo da torre. Você pára no primeiro\n"
+					+ " andar e anda pelo patamar até uma porta. A porta abre para um aposento grande, onde há uma cama\n "
+					+ "feita bem confortável. Se quiser trancar a porta e dormir essa noite ali, vá para 288(Digite 1). Se quiser\n "
+					+ "explorar a torre mais adiante, vá para 77(Digite 2).");
+			
+			Referencia r022 = new Referencia();
+			this.refList[22] = (r022);
+			r022.setNumero(22);
+			Npc monstro22um = new Npc();
+			Npc monstro22dois = new Npc();
+			Npc[] monstro22 = new Npc[2];
+			monstro22[0] = (monstro22um);
+			monstro22[1] = (monstro22dois);
+			monstro22[0].setNomeMonstro("Goblin um");
+			monstro22[0].setMonstroHab(4);
+			monstro22[0].setMonstroEner(5);
+			monstro22[1].setNomeMonstro("Goblin dois");
+			monstro22[1].setMonstroHab(4);
+			monstro22[1].setMonstroEner(5);
+			r022.setText("Quando você se senta à mesa, os GOBLINS param de discutir e olham friamente para você. \nVocê "
+					+ "vê o ódio em seus rostos pardos cheios de verrugas. De repente, eles se levantam e desembainham "
+					+ "suas espadas.\n Você terá que lutar com um de cada vez.\n"+ monstro22[0].toString() + monstro22[1].toString()
+					+ "Se você vencer, vá para 198.");
 			
 
+			Referencia r023 = new Referencia();
+			this.refList[23] = (r023);
+			r023.setNumero(23);
+			Npc monstro023 = new Npc();
+			r023.setMonstro(monstro023);
+			monstro023.setNomeMonstro("OURIVERES DE PRATA");
+			monstro023.setMonstroHab(4);
+			monstro023.setMonstroEner(8);
+			r023.setText("O homem pega uma clava de madeira atrás de uma cadeira e se prepara para lutar contra você.\n"
+					+ "Ele é forte, mas não é bom de luta.\n"+monstro023.toString()+"\nSe você vencer, vá para 146.");
+			
+			Referencia r024 = new Referencia();
+			this.refList[24] = (r024);
+			r024.setNumero(24);
+			r024.setText("Há uma outra loja do lado esquerdo da rua. Uma grade de ferro na janela impede que você veja "
+					+ "que tipo de loja é. \nVocê tenta a maçaneta da porta e ela gira. \nSe quiser entrar na loja, vá para 336.(Digite 1) "
+					+ "\nSe quiser continuar para o oeste, sem olhar para a loja, vá para 196.(Digite 2)");
 			
 			
+			Referencia r025 = new Referencia();
+			this.refList[25] = (r025);
+			r025.setNumero(25);
+			r025.setText("Você logo se dá conta de que está em um estábulo ao ver um homem grande, de peito nu, usando\n "
+					+ "um avental branco imundo, trabalhando junto a um fogo. Ele pega uma barra de ferro incandescente\n "
+					+ "do fogo com sua mão protegida por luva e principia a martelá-la para que pegue a forma de uma\n "
+					+ "ferradura na sua bigorna. O suor se derrama da sua testa enquanto ele labuta com o martelo.Você:\n"
+					+ "Começa a conversar com o ferreiro? Vá para 169(Digite 1)\n"
+					+ "Ataca-o com sua espada? Vá para 323(Digite 2)\n"
+					+ "Deixa-o com suas ocupações e continua para o norte?Vá para 115(Digite 3)\n");
 			
+			Referencia r026 = new Referencia();
+			this.refList[26] = (r026);
+			r026.setNumero(26);
+			r026.setText("Você embainha a sua espada e olha à sua volta para o círculo de espectadores. Tendo"
+					+ "testemunhado sua excelente técnica de espadachim, cada um deles volta em silêncio para sua mesa, não"
+					+ "querendo provocá-lo mais. O estalajadeiro se desculpa por sua falta de amabilidade e convida você a se"
+					+ "sentar no bar e desfrutar de uma bebida por conta dele. Você pergunta se ele sabe do paradeiro de "
+					+ "Nicodemus. O estalajadeiro franze a testa e olha para você de forma inquisitiva. Depois, diz: -Não "
+					+ "sei o que você quer com aquele velho mágico manhoso. Ele não quer conversa com ninguém e mora "
+					+ "sozinho em uma cabana pequena embaixo da Ponte Cantora. Vá andando sempre para o norte pela "
+					+ "Rua do Mercado, atravesse a área do mercado e você chegará a uma ponte que liga as margens do "
+					+ "Rio Peixe-Gato e leva à parte velha da cidade e ao porto. Nicodemus não vai falar com você e ele"
+					+ "conhece mágica suficiente para manter longe de sua porta mesmo os mais valentes. Você diz ao"
+					+ "estalajadeiro para não ser tão descortês com estranhos da próxima vez, e sai da taverna para se"
+					+ "dirigir ao norte (vá para 296).");
 			
+			Referencia r027 = new Referencia();
+			this.refList[27] = (r027);
+			r027.setNumero(27);
+			r027.setText("Você entra em um pequeno aposento iluminado à luz de vela e sem janelas. Ele está vazio, a não ser\n"
+					+ "por uma mesa e duas cadeiras. Um homem usando um capuz-apertado e roupas pretas está de pé em\n"
+					+ "um dos cantos. Ele sorri e pede que você se sente à mesa. Ele se senta à sua frente e, depois de pôr\n"
+					+ "seis pílulas sobre seis caveiras na mesa, olha para você e diz: - Uma das pílulas à sua frente é\n"
+					+ "veneno mortal, as outras são inofensivas. Engula uma à sua escolha. Se você viver, eu lhe darei 20 \n"
+					+ "Peças de Ouro. Se você morrer, eu ficarei com todas as suas posses. \nSe você quiser participar deste "
+					+ "jogo fatal, vá para 223.(Digite 01) \nSe preferir sair do aposento e andar de volta pela alameda para a Rua da "
+					+ "Vela, vá para 165.(Digite 2)");
 			
+			Referencia r028 = new Referencia();
+			this.refList[28] = (r028);
+			r028.setNumero(28);
+			r028.setText("Enquanto você estava lutando com as Ratazanas Gigantes, teve a impressão de ter visto alguém ou \n"
+					+ "alguma coisa esgueirar-se nas sombras à sua frente. \nSe quiser continuar na direção norte pelo túnel,"
+					+ "vá para 265.(Digite 2) \nSe preferir dar meia volta e caminhar de novo para o bueiro de entrada, vá para 104.(Digite 2)");
 			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r029.setNumero(29);
+			r029.setText("Você se acocora no colchão e pensa no que fazer em seguida. \nSe quiser fingir que está doente e "
+					+ "jogar o balde de ferro de encontro às barras da cela para atrair \na atenção dos guardas, vá para 143.(Digite 1)"
+					+ "\nSe quiser inspecionar a cela em detalhe, na esperança de encontrar um caminho de fuga secreto, vá para 230.(Digite 2)");
 			
+			Referencia r030 = new Referencia();
+			this.refList[30] = (r030);
+			r030.setNumero(30);
+			r030.setText("A Rua da Torre logo termina em um cruzamento, onde encontra a Rua do Estábulo, pela qual você \n"
+					+ "pode ir para o norte ou para o sul. Você resolve ir para o norte (vá para 76).");
 			
+			Referencia r031 = new Referencia();
+			this.refList[31] = (r031);
+			r031.setNumero(31);
+			r031.setText("À sua frente, há uma ponte de madeira que se estende sobre um rio sujo. Muito lixo desce flutuando \n"
+					+ "na direção do mar sobre sua superfície escura, e você fica chocado ao ver uma mão humana \n"
+					+ "passando à sua frente. As colunas de sustentação da ponte se erguem bem acima dela, e você vê \n"
+					+ "caveiras, humanas e não humanas, amarradas nelas. O vento faz um barulho lúgubre, assobiando \n"
+					+ "entre as estruturas da ponte, lembrando almas torturadas que gritassem por ajuda. Quase encoberto \n"
+					+ "no campo visual, há um pequeno lance de escadas que desce para baixo da ponte a partir do lugar \n"
+					+ "onde você está. Um homem de uma perna só, carregando um saco, está atravessando a ponte, vindo \n"
+					+ "da margem norte. \nSe quiser descer as escadas, vá para 329.(Digite 1) \nSe quiser esperar para falar com o "
+					+ "homem, vá para 364.(Digite 1)");
 			
+			Referencia r032 = new Referencia();
+			this.refList[32] = (r032);
+			r032.setNumero(32);
+			r032.setText("Antes de você chegar à porta, a Rainha Serpente estica o corpo e morde você no pescoço, causando "
+					+ "a perda de 4 pontos de ENERGIA e 1 ponto de HABILIDADE. Se você ainda estiver vivo, puxa a "
+					+ "espada para atacar a Rainha Serpente (vá para 249).");
 			
+			Referencia r033 = new Referencia();
+			this.refList[33] = (r033);
+			r033.setNumero(33);
+			r033.setText("Você diz ao guarda que gostaria de vender uns cálices de Prata que roubou de uma taverna em \n"
+					+ "Silverton, e que você pagará uma Peça de Ouro pela informação de onde vender pelo melhor preço. \n"
+					+ "O guarda olha para você desconfiado, dizendo: “Deixe-me ver estes cálices na sua mochila antes de \n"
+					+ "deixar você entrar.” Você: \nDirá que você sabe que os cálices são Amaldiçoados e que só devem ser examinados por um mago?"
+					+ "Vá para 381(Digite 1). \nTentará passar correndo pelo guarda e chegar à rua principal? Vá para 291 (Digite 2). \n"
+					+ "Atacará o guarda rapidamente com sua espada? Vá para 49\n");
 			
+			Referencia r034 = new Referencia();
+			this.refList[34] = (r034);
+			r034.setNumero(34);
+			r034.setText("A carruagem passa com estrondo, e você vê que o cocheiro está forçando os cavalos a correr, \n"
+					+ "como se a sua própria vida dependesse disso. Quando o ruído da carruagem vai sumindo na distância, \n"
+					+ "você sai para a rua e continua na direção oeste (vá para 171).");
+			
+			Referencia r035 = new Referencia();
+			this.refList[35] = (r035);
+			r035.setNumero(35);
+			r035.setText("Você empurra o homem pela porta e crava a espada nele. Para sua grande surpresa, ele não \n"
+					+ "parece afetado com o ferimento. Lentamente, ele avança na sua direção, tentando tocar a sua pele com \n"
+					+ "suas mãos de esqueleto decompostas. Ele agarra seu braço, mas você consegue chutá-lo para longe. \n"
+					+ "Fica no seu braço uma marca, como se fosse uma queimadura, mas que solta um cheiro nauseabundo \n"
+					+ "de carne podre. Você perde 2 pontos de ENERGIA. Então, você compreende que está diante de um \n"
+					+ "Caçador de Espíritos, um dos servidores fiéis de Zanbar Bone. Enquanto ele avança novamente na \n"
+					+ "sua direção com os braços estendidos, você tenta se lembrar do que deve fazer. Você:\n"
+					+ "Disparará a seta de prata nele? Vá para 189(Digite 1).\n"
+					+ "Refletirá seu olhar em um espelho (se você tiver um)? Vá para 305(Digite 2).\n"
+					+ "Disparará seu Anel de Gelo nele (se você tiver um)? Vá para 382(Digite 3).");
+			
+			Referencia r036 = new Referencia();
+			this.refList[36] = (r036);
+			r036.setNumero(36);
+			r036.setText("O homem se debruça sobre o balcão e lhe diz que um Anel de Invisibilidade custa 10 Peças de\n "
+					+ "Ouro, um Anel de Fogo custa 8 Peças de Ouro, e um Anel de Gelo custa 7 Peças de Ouro. Se você \n"
+					+ "quiser comprar um dos anéis, faça o necessário desconto na sua Folha de Aventuras. Dizendo adeus \n"
+					+ "ao homem, você põe o anel no dedo e sai da loja para se dirigir para o oeste (vá para 196).");
+			
+			Referencia r037 = new Referencia();
+			this.refList[37] = (r037);
+			r037.setNumero(37);
+			r037.setText("O homem dedilha sua lira e canta uma canção alegre, toda sobre você e a sua sorte - ele realmente"
+					+ "tem o poder de fazê-lo ter sorte. \nAcrescente 2 pontos de SORTE e siga adiante para a próxima barraca (vá para 398).");
+			
+			Referencia r038 = new Referencia();
+			this.refList[38] = (r038);
+			r038.setNumero(38);
+			r038.setText("Um dos homens põe a mão no bolso interno de seu casaco verde e tira uma fina pulseira de prata.\n"
+					+ "Ele a entrega a você, que repara no perfil de um inseto gravado na sua superfície. O homem \n"
+					+ "explica que a pulseira do inseto tem o poder de matar mesmo insetos gigantes. Depois de colocar a\n"
+					+ "pulseira no pulso, você sai da taverna e se dirige de novo para o norte (vá para 296).");
+			
+			Referencia r039 = new Referencia();
+			this.refList[39] = (r039);
+			r039.setNumero(39);
+			r039.setText("Você abre sua mochila e finge procurar o objeto de prata. A Rainha Serpente começa a ficar \n"
+					+ "inquieta, e você nota que sua impaciência aumenta cada vez mais. Você não consegue pensar em "
+					+ "um bom plano e começa a entrar em pânico. \nSe quiser correr para a porta da frente, volte para 32.(Digite 1)\n"
+					+ "Se quiser desembainhar a espada para atacar a Rainha Serpente, vá para 249.(Digite 2)");
+			
+			Referencia r040 = new Referencia();
+			this.refList[40] = (r040);
+			r040.setNumero(40);
+			r040.setText("Do alto da muralha, você vê que ela circunda um grupo de criaturas de cor marrom, jogando algum\n"
+					+ "tipo de jogo com um taco de madeira e uma pequena bola de couro. Uma das criaturas acabou de \n"
+					+ "bater na bola e está correndo na direção de uma criatura que tem o pé em um saco de couro e \n"
+					+ "pertence ao outro time. Você se dá conta de que estas criaturas são Beises jogando seu jogo "
+					+ "favorito, Beisebol.\nSe quiser pedir para entrar no jogo, vá para 168.(Digite 1) \nSe preferir descer a muralha de"
+					+ "volta, retornar ao cruzamento e se dirigir para o oeste, descendo a Rua do Porto, vá para 91.(Digite 2)");
+			
+			Referencia r041 = new Referencia();
+			this.refList[41] = (r041);
+			r041.setNumero(41);
+			r041.setText("Os dois guardas que estão segurando você se entreolham e depois consultam o outro guarda para \n"
+					+ "chegar a uma decisão. Ele faz um sinal com a cabeça e eles soltam você. Quando você paga a ele as\n"
+					+ "15 Peças de Ouro, ele olha para você de modo penetrante, dizendo: - Se Lord Azzur descobrir que \n"
+					+ "você está na cidade sem um passe, vai se arrepender de ter nascido. Se eu fosse você, arrumaria um.\n"
+					+ "E quanto a Nicodemus, ache-o sozinho. \nReprimindo seu impulso de puxar a espada, você se vira e "
+					+ "caminha para o interior da cidade (vá para 74).");
+			
+			Referencia r042 = new Referencia();
+			this.refList[42] = (r042);
+			r042.setNumero(42);
+			r042.setText("Você diz ao homem que não pode pagar o preço que ele está pedindo. Ele sacode os ombros e diz:\n"
+					+ "- Bom, você tem alguma comida? Você abre sua mochila, e ele leva todas as Provisões que lhe \n"
+					+ "restam. Ele então começa a fundir a sua flecha de prata, e você espera pacientemente que ele a faça.\n"
+					+ "Finalmente, ele a entrega a você e assegura que ela será precisa no disparo. Você agradece pelo \n"
+					+ "trabalho que ele teve e sai da loja. Do lado de fora, você parte novamente na direção leste (vá para 100).");
+			
+			Referencia r043 = new Referencia();
+			this.refList[43] = (r043);
+			r043.setNumero(43);
+			r043.setText("Você grita de dor quando a taça se transforma em um carvão incandescente na sua mão, e fica \n"
+					+ "seriamente queimado, perdendo 2 pontos de HABILIDADE e 2 pontos de SORTE. \nSe ainda não o "
+					+ "tiver feito, poderá erguer a taça A (vá para 115)(Digite 1) ou a taça B (vá para 209)(Digite 2). \nSe não estiver"
+					+ "interessado nas taças, você poderá caminhar pela passagem em arco (vá para 107)(Digite 3), \nou subir as escadas (vá para 60)(Digite 4).");
+			
+			Referencia r044 = new Referencia();
+			this.refList[44] = (r044);
+			r044.setNumero(44);
+			r044.setText("De pé, em linha perpendicular à rua, há três homens, cada um deles armado com uma clava de \n"
+					+ "ponta afiada. Você repara que os três possuem uma estrela vermelha tatuada na testa. \n"
+					+ "São vagabundos cuja intenção é roubar você. \nSe você tiver uma Faca de Lançamento, poderá se livrar de "
+					+ "um deles antes que eles cheguem a você (volte para 18). \nSe não tiver, você terá que enfrentar todos três com sua espada (vá para 225).");
+			
+			Referencia r045 = new Referencia();
+			this.refList[45] = (r045);
+			r045.setNumero(45);
+			r045.setText("A bola de vidro se parte com o impacto na rua calçada de pedra. Em contato com o ar, a fumaça \n"
+					+ "passa a ter uma coloração dourada e começa a tomar a forma de um elmo com asas. \nO elmo se "
+					+ "solidifica e pousa na rua, faiscando sob a luz do sol. É o elmo mais fantástico que você "
+					+ "já viu em sua vida. \nSe quiser colocá-lo em sua cabeça, vá para 376(Digite 1). \nSe preferir deixá-lo onde está e partir"
+					+ "para o leste de novo, vá para 161.(Digite 2)");
+			
+			Referencia r046 = new Referencia();
+			this.refList[46] = (r046);
+			r046.setNumero(46);
+			r046.setText("O ferreiro pega o seu dinheiro e caminha na direção de uns fardos de feno no canto. Ele levanta um \n"
+					+ "deles e, embaixo disso, você vê a cota de malha de aço. Ele se vira para você e diz: - É preciso esconder \n"
+					+ "tudo neste lugar. Não se pode confiar em ninguém. A cota serve perfeitamente em você, e a qualidade do \n"
+					+ "trabalho é excelente. Acrescente 2 pontos de HABILIDADE. Você sai dos estábulos com sua armadura nova e \n"
+					+ "continua para o norte (vá para 115).");
+			
+			Referencia r047 = new Referencia();
+			this.refList[47] = (r047);
+			r047.setNumero(47);
+			r047.setText("O dardo-relâmpago estoura em seu peito e atira você ao chão. Você perde 3 pontos de ENERGIA.\n"
+					+ "Se ainda estiver vivo, você verá o homem gordo às gargalhadas. Talvez ele não esteja em guarda?\n"
+					+ "Você resolve jogar sua espada nele da posição tombada em que se encontra. Jogue dois dados. \nSe o "
+					+ "número obtido for menor ou igual a seu índice de HABILIDADE, a espada rasga o peito do homem \n"
+					+ "e o mata (vá para 313). Se o número for maior do que o seu índice de HABILIDADE, a espada voa, \n"
+					+ "passando por ele, e retine ao cair no chão de mármore (vá para 81).");
+			
+			Referencia r048 = new Referencia();
+			this.refList[48] = (r048);
+			r048.setNumero(48);
+			r048.setText("Há uma escada de ferro presa à borda de um bueiro de entrada que desce para o túnel lá embaixo."
+					+ "Está escuro, e um cheiro muito desagradável sobe do fundo. Se quiser descer pela escada, vá para"
+					+ "321. Se quiser repor a tampa do bueiro no lugar e continuar para o leste, vá para 205.");
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
+			
+			Referencia r029 = new Referencia();
+			this.refList[29] = (r029);
+			r028.setNumero(29);
 			
 			
 			
@@ -419,6 +1137,218 @@ public class GerenciadorRef {
 			
 			
 			//-------------------------------------------------------------------------------------------------------------------------------		
-			
+			Referencia r201 = new Referencia();
+			this.refList[201] = (r201);
+			r201.setNumero(201);
+			r201.setText("Seguindo o mapa de Nicodemus, você começa a sua longa caminhada para o norte, na direção\n "
+					+ "da torre guarnecida de Zanbar Bone, o Príncipe da Noite. Você caminha através de bosques e campos.\n"
+					+"Você consegue relaxar um pouco no agradável ambiente do campo, respirando ar fresco com seus\n"
+					+"odores maravilhosos. Quando a luz vai sumindo, você resolve acampar sob um enorme olmo.\n"
+					+"Você cozinha uma refeição de coelho guisado e cogumelos antes de se deitar para um sono longo e\n"
+					+"profundo (some 2 pontos de ENERGIA). De manhã, você procura um teixo e corta um galho\n"
+					+"comprido para fazer um arco, a fim de disparar a flecha de prata. Ao testar a precisão do arco,\n"
+					+"você nota repentinamente a presença de uma pomba branca pousada em um galho baixo ali perto. \n"
+					+ "Há um pequeno pedaço de papel preso a uma de suas patas, o qual a pomba permite que você retire sem\n"
+					+"voar para longe. Há uma mensagem no papel que diz:\n"
+					
+					+"\n"
+					+ "'Caro Amigo \n:"
+					+"Temo que esteja ficando velho demais para ser útil a alguém.\n"
+					+"Lamento dizer que as informações que lhe dei sobre o\n"
+					+"composto necessário para matar Zanbar Bone não estão\n"
+					+"corretas. Você tem que usar apenas dois dos três\n"
+					+"ingredientes que eu disse a você, mas não consigo me\n"
+					+"lembrar que dois. Só posso sugerir que você tente cabelo de\n"
+					+"Bruxa com pérolas negras, ou cabelo de Bruxa com flor de\n"
+					+"1ótus, ou pérolas negras com flor de 1ótus. Minhas\n"
+					+"desculpas.\n"
+					+"Boa sorte,'\n"
+					+"\n 'N'.\n"
+					
+					+"\nVocê joga a mensagem no chão e solta uma maldição. Você muda de idéia uma dúzia de vezes\n"
+					+"antes de chegar a uma decisão. Finalmente, você faz sua escolha e amassa os dois ingredientes\n"
+					+"em uma pedra chata, misturando-os. Você coloca o composto em uma pequena bolsa de couro,\n"
+					+"esperando ter tomado a decisão certa. Você parte de novo, mas não demora muito para que a\n"
+					+"vizinhança se torne menos acolhedora. As árvores são retorcidas ou atrofiadas e não se ouvem\n"
+					+"pássaros – você deve estar se aproximando do domínio do Príncipe da Noite. De repente, à sua\n"
+					+"esquerda, você ouve movimentos e grunhidos no mato. É um monstro que vagueia, atraído pelo\n"
+					+"seu cheiro. Jogue um dado e consulte a tabela abaixo para saber que criatura apareceu. Lute contra\n"
+					+"ela normalmente.\n"
+					);
+					Random dado = new Random();
+					int numero;
+					numero = dado.nextInt(6)+1;
+					
+					switch(numero){
+					case 1:Npc monstro201 = new Npc();
+					monstro201.setNomeMonstro("Orca");
+					monstro201.setMonstroEner(4);
+					monstro201.setMonstroHab(5);
+					System.out.println(monstro201);
+				
+					
+					case 2:Npc monstro202 = new Npc();
+					monstro202.setNomeMonstro("Cobra Gigante");
+					monstro202.setMonstroEner(6);
+					monstro202.setMonstroHab(6);
+					System.out.println(monstro202);
+					
+					
+					case 3:Npc monstro203 = new Npc();
+					monstro203.setNomeMonstro("Lobo");
+					monstro203.setMonstroEner(5);
+					monstro203.setMonstroHab(5);
+					System.out.println(monstro203);
+					
+				
+					
+					case 4:Npc monstro204 = new Npc();
+					monstro204.setNomeMonstro("Pigmeu");
+					monstro204.setMonstroEner(4);
+					monstro204.setMonstroHab(4);
+					System.out.println(monstro204);
+					
+					
+					case 5:Npc monstro205 = new Npc();
+					monstro205.setNomeMonstro("Homem-Macaco");
+					monstro205.setMonstroEner(6);
+					monstro205.setMonstroHab(7);
+					System.out.println(monstro205);
+					
+					
+					case 6:Npc monstro206 = new Npc();
+					monstro206.setNomeMonstro("Troll da Caverna");
+					monstro206.setMonstroEner(7);
+					monstro206.setMonstroHab(8);
+					System.out.println(monstro206);
+					
+					
+			Referencia r202 = new Referencia();
+			this.refList[202] = (r202);
+			r202.setNumero(202);
+			r202.setText("O guarda responde que pedirá uma escolta para levá-lo até Nicodemus.\n" 
+						+"Ele estica o braço até uma pequena sineta na parede da guarita e a faz soar\n"
+						+"três vezes. Quase que imediatamente, dois outros guardas vêm correndo da casa,\n" 
+						+"e você fica surpreso quando cada um deles segura um de seus\n"
+						+"braços. O guarda com a lança levanta a cabeça e ri, dizendo: \n"
+						+"Então você quer ver Nicodemus, não é? \n"
+						+"Que tal ver o interior de uma masmorra ao invés disso?\n" 
+						+"Guardas, levem este estúpido embora e ponham-no atrás das grades,\n"
+						+"depois joguem fora a chave.\n" 
+						+"Você:\n"
+						+"Permitirá que eles o levem?\n"
+						+"Digite 1\n"
+						+"Tentará lutar contra os guardas?\n"
+						+"Digite 2\n"
+						+"Tentará subornar os guardas?\n"
+						+"Digite 3\n");
+					System.out.println("O que você fará?\n");
+					escolher = new Scanner(System.in);
+					escolha = escolher.nextInt();
+					System.out.println(decisao(escolha, 51, 69, 276,0).toString());
+					
+			Referencia r203 = new Referencia();
+			this.refList[203] = (r203);
+			r203.setNumero(203);
+			r203.setText("\nZanbar Bone caminha na sua direção, tentando tocar a sua pele exposta.\n" 
+						+"Você joga a espada de lado e coloca a flecha de prata no arco.\n" 
+						+"Você só tem uma chance. Teste sua Sorte. Se você Tiver sorte,\n" 
+						+"a flecha atinge seu alvo e atravessa as vestes e o peito do Príncipe da Noite\n" 
+						+"Se você Não tiver sorte, a flecha não acerta no Príncipe da Noite,\n" 
+						+"e ele avança para tocar o seu braço. Seus dedos de esqueleto estão sugando a sua vida.\n" 
+						+"Você é agora um de seus servos mortos-vivos.\n");
+					boolean resultSorte = (heroi.usarSorte(heroi.getSorte()));
+					if(resultSorte == true){
+						//System.out.println(r244.toString());
+        			}else{
+        				//System.out.println(r401.toString());
+		}
+					
+		
+			Referencia r204 = new Referencia();
+			this.refList[204] = (r204);
+			r204.setNumero(204);
+			r204.setText("Você larga a taça e tira a mão para longe.\n" 
+						+"O escorpião corre por mais ou menos um metro pelo chão,\n" 
+						+"até que você pisa nele com sua bota. Se ainda não o tiver feito,\n" 
+						+"você poderá levantar a taça B ou a taça C .\n" 
+						+"Se você tiver perdido o interesse nas taças, poderá ou\n" 
+						+"caminhar até a passagem em arco , ou subir as escadas.\n"
+						+"Levantar taça B\n"
+						+"Digite 1\n"
+						+"Levantar taça C\n"
+						+"Digite 2\n"
+						+"Caminhar até a passagem do arco\n"
+						+"Digite 3\n"
+						+"Subir as escadas\n"
+						+"Digite4\n");
+		System.out.println("O que você fará?\n");
+		escolher = new Scanner(System.in);
+		escolha = escolher.nextInt();
+		System.out.println(decisao(escolha, 209, 43, 107, 60).toString());
+		
+		Referencia r205 = new Referencia();
+		this.refList[205] = (r205);
+		r205.setNumero(205);
+		r205.setText("Depois de recolocar a tampa do bueiro, você parte novamente para o leste." 
+					+"Tudo parece estar quieto demais, e você começa a se sentir nervoso." 
+					+"À sua frente, você vê que a Rua do Estábulo faz uma curva fechada para a esquerda." 
+					+"Se você quiser continuar depois da curva." 
+					+"Digite 1\n"
+					+"Se quiser andar de volta para o cruzamento e virar à direita na Rua da Torre." 
+					+"Digite 2\n");		
+		System.out.println("O que você fará?\n");
+		escolher = new Scanner(System.in);
+		escolha = escolher.nextInt();
+		System.out.println(decisao(escolha, 44, 127, 0, 0).toString());
+		
+		Referencia r206 = new Referencia();
+		this.refList[206] = (r206);
+		r206.setNumero(206);
+		r206.setText("O Anão explica que eles estão jogando um simples jogo de quem-ganha-leva." 
+					+"A aposta é de 2 Peças de Ouro. Cada pessoa põe 2 Peças de Ouro na mesa e joga 2 dados." 
+					+"A pessoa que tirar o número mais alto fica com as 8 Peças de Ouro." 
+					+"Para jogar, jogue 2 dados 3 vezes para os 3 Anões e anote cada um dos totais." 
+					+"Em seguida, jogue 2 dados para você. Se seu próprio total for maior do que os"
+					+"outros 3 totais, você ganha 6 Peças de Ouro dos Anões. "
+					+ "Se o total for menor do que qualquer dos"
+					+"outros 3 totais, você perde 2 Peças de Ouro. Você pode jogar 4 vezes, se você quiser," 
+					+"antes que os Anões fiquem enfastiados e saiam da taverna." 
+					+"Você irá jogar?(1=sim/2=não)");
+					escolha = 1;
+					System.out.println(decisao(escolha, 296, 0, 0, 0).toString());
+		
+		Referencia r207 = new Referencia();
+		this.refList[207] = (r207);
+		r207.setNumero(207);
+		r207.setText("A escadaria termina em uma porta. Você gira a maçaneta lentamente, e a porta se abre," 
+					+"para sua grande surpresa dando para o ar livre. Você sai para o telhado plano da torre." 
+					+"Subitamente, você toma consciência de que há movimentos no céu e, ao olhar para cima," 
+					+"vê duas aves grandes à luz da lua, com bicos e garras longas, que descem velozmente" 
+					+"sobre você. Não há tempo para correr para um abrigo, e você terá que lutar contra os" 
+					+"GAVIÕES ASSASSINOS.");
+		  Npc monstro207um = new Npc();
+		  Npc monstro207dois = new Npc();
+		  Npc[] monstro207 = new Npc[2];
+		  	monstro207[0] = (monstro207um);
+		  	monstro207[1] = (monstro207dois);
+		  	monstro207[0].setNomeMonstro("GAVIÃO ASSASSINO 1");
+		  	monstro207[0].setMonstroHab(4);
+		  	monstro207[0].setMonstroEner(5);
+		  	monstro207[1].setNomeMonstro("GAVIÃO ASSASSINO 2");
+		  	monstro207[1].setMonstroHab(4);
+		  	monstro207[1].setMonstroEner(4);
+		escolha = 1;
+		System.out.println(decisao(escolha, 314, 0, 0, 0).toString());
+		
+		Referencia r208 = new Referencia();
+		this.refList[208] = (r208);
+		r208.setNumero(208);
+		r208.setText("Os bolsos do Goblin contêm 2 Peças de Ouro, um dente de alho e alguns ossos velhos" 
+		+"de articulações. Pegue o que você quiser e dirija-se outra vez para o leste pela Rua do Tamanco");
+		escolha = 1;
+		System.out.println(decisao(escolha, 317, 0, 0, 0).toString());
 		}
 	}
+}
+			

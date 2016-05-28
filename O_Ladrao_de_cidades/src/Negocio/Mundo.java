@@ -2,6 +2,7 @@ package Negocio;
 
 import java.util.Scanner;
 
+
 public class Mundo {
 	private Referencia[] referencias = new Referencia[6];
 	private Personagem heroi;
@@ -42,7 +43,7 @@ public class Mundo {
 		
 		Npc monstroR5 = new Npc();
 		monstroR5.setNomeMonstro("Arlindo");
-		monstroR5.setMonstroHab(70);
+		monstroR5.setMonstroHab(10);
 		monstroR5.setMonstroEner(12);
 		
 		Referencia r5 = new Referencia();
@@ -66,10 +67,53 @@ public class Mundo {
 	public void jogar(){
 		
 		escolher = new Scanner(System.in);
-		
-		System.out.println(this.referencias[0]);
+		Referencia refAtual = new Referencia();
+		int valor=1;
+		refAtual = this.referencias[0];
+		do {
+			System.out.println(refAtual);
+			switch (valor) {
+			case 1:
+				System.out.println(this.referencias[1]);
+				do{
+					System.out.println("O que você fará?");
+					escolha = escolher.nextInt();
+				}while((escolha>2)||(escolha<1));
+				if (escolha==1) {
+					valor = 3;
+				}else{
+					valor = 4;
+				}
+				break;
+			case 2:
+				System.out.println(this.referencias[2]);
+				System.exit(0);
+				break;
+			case 3:
+				System.out.println(this.referencias[3]);
+				System.exit(0);
+				break;
+			case 4:
+				System.out.println(this.referencias[4]);
+				do{
+					System.out.println("O que você fará?");
+					escolha = escolher.nextInt();
+				}while((escolha>2)||(escolha<1));
+				if (escolha==1) {
+					valor = 2;
+				}else{
+					valor = 4;
+				}
+				break;
+			default:
+				System.out.println(this.referencias[5]);
+				break;
+			}
+		} while (this.heroi.getEnergia()>0);
+		/*System.out.println(this.referencias[0]);
 		heroi.setOuro(30);
 		mochila.setProvisao(10);
+		
 		System.out.println(this.referencias[1]);
 		do{
 			System.out.println("O que você fará?");
@@ -98,6 +142,6 @@ public class Mundo {
 		}else{
 			System.out.println("Você foi derrotado! Fim de Jogo!");
 			System.exit(0);
-		}
+		}*/
 	}
 }

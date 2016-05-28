@@ -7,6 +7,10 @@ public class Mochila {
 	private boolean espada;
 	private boolean brocheEscorpiao;
 	private boolean anelDeFogo;
+	private boolean pulseiraDoInseto;
+	private boolean flechaDePrata;
+	private boolean facaDeLancamento;
+	private boolean elmoComAsas;
 	private int provisao;
 	
 	
@@ -66,6 +70,30 @@ public class Mochila {
 	public void usarProvisao(Personagem heroi){
 		this.provisao--;
 		heroi.setEnergiaAtual(heroi.getEnergiaAtual()+4);
+	}
+	public boolean isPulseiraDoInseto() {
+		return pulseiraDoInseto;
+	}
+	public void setPulseiraDoInseto(boolean pulseiraDoInseto) {
+		this.pulseiraDoInseto = pulseiraDoInseto;
+	}
+	public boolean isFlechaDePrata() {
+		return flechaDePrata;
+	}
+	public void setFlechaDePrata(boolean flechaDePrata) {
+		this.flechaDePrata = flechaDePrata;
+	}
+	public boolean isFacaDeLancamento() {
+		return facaDeLancamento;
+	}
+	public void setFacaDeLancamento(boolean facaDeLancamento) {
+		this.facaDeLancamento = facaDeLancamento;
+	}
+	public boolean isElmoComAsas() {
+		return elmoComAsas;
+	}
+	public void setElmoComAsas(boolean elmoComAsas) {
+		this.elmoComAsas = elmoComAsas;
 	}
 	
 }

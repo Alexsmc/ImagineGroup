@@ -1,5 +1,6 @@
 package Negocio;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Personagem {
 	private String nome;
@@ -9,6 +10,7 @@ public class Personagem {
 	private int ouro; // o quanto de ouro lhe possui;
 	private int energiaAtual;
 	private int sorteAtual;
+	private Scanner r;
 	
 	
 	public int getEnergiaAtual() {
@@ -27,6 +29,8 @@ public class Personagem {
 	public void setSorteAtual(int sorteAtual) {
 		if(sorteAtual>sorte){
 			this.sorteAtual = sorte;
+		}else if(sorteAtual<=1){
+			this.sorteAtual=1;
 		}else{
 			this.sorteAtual = sorteAtual;
 		}
@@ -87,4 +91,26 @@ public class Personagem {
 		return ficha;
 	}
 	
+	public void oferecerProvisao(Mochila mochila, Personagem heroi){
+		System.out.println("Energia Atual: " + heroi.getEnergiaAtual() + "/" + heroi.getEnergia());
+		System.out.println("Deseja usar provisões? (y/n)"+ "("+ mochila.getProvisao() +")");
+		int quantidade=0;
+		r = new Scanner(System.in);
+		char decisao = r.nextLine().charAt(0);
+		if(decisao == 'y'|| decisao == 'Y'){
+			if(mochila.getProvisao()<=0){
+				System.out.println("Você não tem provisões.");
+			}else{
+			do{
+				System.out.println("Quantas deseja usar? Possui(" + mochila.getProvisao() + ")");
+				quantidade = r.nextInt();
+			}while(quantidade<=mochila.getProvisao());
+				for(int x=0; x<quantidade;x++){
+					mochila.usarProvisao(heroi);
+					System.out.println("Você Recuperou 4 de energia!");
+				}
+				System.out.println("Energia: " + heroi.getEnergiaAtual() + "/" + heroi.getEnergia());
+			}
+		}
+	}
 }

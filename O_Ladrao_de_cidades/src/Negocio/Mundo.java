@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package Negocio;
 
 import java.util.Scanner;

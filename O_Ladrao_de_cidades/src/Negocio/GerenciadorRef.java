@@ -12,7 +12,7 @@ public class GerenciadorRef {
 	private Mochila mochila;
 	private int escolha;
 	
-private Referencia decisao(int escolha, int opc1, int opc2, int opc3, int opc4){
+	private Referencia decisao(int escolha, int opc1, int opc2, int opc3, int opc4){
 		
 		switch (escolha) {
 		case 1:
